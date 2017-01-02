@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>没有名字</title>
+    <link rel="icon" href="img/demo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/demo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+   
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+<style >
+
+body{
+  margin: 0px;
+padding: 0px 0px -50px 0px;
+
+}  
+.form{width:600px;height:auto; background-color: #f8f8f8;
+  border-color: #e7e7e7;padding:50px;z-index: 12;
+  margin-top:100px;
+  margin-left: auto;
+  margin-right:auto;
+}  
+
+#register_form{display: block;}  
+.fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}  
+input[type="text"],input[type="password"]{padding-left:26px;}  
+ 
+#Layer1{
+  background:url(img/reg_background.png)no-repeat;
+  background-size: 100%;
+}
+.header{
+  text-align: center;
+  font-family: 微软雅黑;
+  font-size: 20px;
+}
+.changeform{
+      margin-left: 20%;
+}
+</style>
+<script>
+
+</script>
+  </head>
+  <body>
+  <div id="Layer1" style="position:absolute; left:0px; top:0px; width:100%; height:100%">  
+     
+
+    <div class="container" style="z-index: 11;">  
+        <div class="form row">  
+            <form class="form-horizontal col-sm-offset-3 col-md-offset-3 changeform" id="register_form">    
+                <div class="col-sm-9 col-md-9">
+                    <div class="form-group header">LEGO注册页面</div>
+                    <div class="form-group">  
+                        <i class="fa fa-user fa-lg"></i> 
+                        <input class="form-control required" type="text" placeholder="用户名" name="username" autofocus="autofocus" maxlength="20"/>
+                    </div>
+                    <div class="form-group">  
+                            <i class="fa fa-lock fa-lg"></i>
+                            <input class="form-control required" type="text" placeholder="邮箱" name="password2" maxlength="20"/>  
+                    </div>   
+                    <div class="form-group">  
+                            <i class="fa fa-lock fa-lg"></i>  
+                            <input class="form-control required" type="password" placeholder="密码" name="password" maxlength="14"/>  
+                    </div> 
+                    <div class="form-group">
+                            <i class="fa fa-lock fa-lg"></i>
+                            <input class="form-control required" type="password" placeholder="重复输入密码" name="password2" maxlength="14"/>  
+                    </div> 
+
+                    <div class="form-group">  
+                            <i class="fa fa-lock fa-lg"></i>
+                            <select class="form-control required" placeholder="用户">
+                            <option selected="selected">普通账户</option>
+                            <option>商家账户</option>
+                            </select>
+                    </div>  
+                    <div class="form-group">  
+                        <input type="submit" class="btn btn-success pull-right" value="注册 "/>     
+                    </div>  
+                </div>  
+            </form>  
+        </div>  
+    </div>  
+      </div>
+    </body>
+
+</html>

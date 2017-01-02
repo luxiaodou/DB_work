@@ -20,7 +20,7 @@ function connectDb() {
     if (!$conn){
         die('Cannot access to DB');
     }
-    mysql_select_db('myapp');
+    mysql_select_db('db_work');
     return $conn;
 }
 
