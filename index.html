@@ -30,9 +30,11 @@
 }
 .center{
   text-align: center;
+  margin: 0 auto;
 }
 
 .navbar-change{
+  margin-top:200px;
   border-radius: 0px;
   margin-bottom: 0px;
   margin: 0 auto;
@@ -43,6 +45,88 @@
   margin-top: 15px;
   margin-bottom: 15px;
   color: #9d9d9d;
+}
+
+.content-wrap{
+  border: 2px solid #F2F2F2;
+  border-radius: 2px;
+  height:500px;
+  width:904px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cinema-wrap{
+  border: 2px solid #F2F2F2;
+  border-radius: 2px;
+  height:250px;
+  width:904px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content{
+  height: 250px;
+  width: 300px;
+  border: 1px solid #F2F2F2;
+  position: relative;
+  float: left;
+
+}
+.content-img{
+  width: 88%;
+  height:63%;
+}
+
+.differenta{
+  color: black;
+}
+
+.differenta:hover{
+  color: black;
+  text-decoration:none;
+}
+
+.use{
+  height: 20px;
+}
+
+.money-highlight{
+  color:#f76120;
+  font-size:20px;
+}
+
+.money{
+  text-decoration: line-through;
+}
+
+.changetype{
+  color:#2B2B2B;
+}
+
+.changetype h4{
+  font-weight: bold;
+}
+
+.fullcontent{
+  height: 500px;
+}
+
+.more:hover{
+  color: blue;
+  text-decoration:none;
+}
+
+.more{
+  color: black;
+  font-size:20px ;
+  float: right;
+  padding-top: 3px; 
+  font-weight: normal;
+}
+
+h2{
+  font-weight: bold;
 }
 
 </style>
@@ -99,19 +183,12 @@
               <h1 class="text-center text-primary">登录</h1>
             </div>
             <div class="modal-body">
-<<<<<<< HEAD
               <form action="" class="form col-md-12 center-block">
                 <div class="form-group">
                   <input type="text" class="form-control input-lg" placeholder="用户名">
-=======
-              <form action="php/login.php" class="form col-md-12 center-block" method="post">
-                  <input style="display: none" type = "number" value="1" name="type">
-                <div class="form-group">
-                  <input type="text" class="form-control input-lg" placeholder="用户名" name = "name">
->>>>>>> origin/master
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw">
+                  <input type="password" class="form-control input-lg" placeholder="登录密码">
                 </div>
                 <div class="form-group">
                   <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
@@ -137,17 +214,12 @@
               <h1 class="text-center text-primary">登录</h1>
             </div>
             <div class="modal-body">
-<<<<<<< HEAD
               <form action="" class="form col-md-12 center-block">
-=======
-              <form action="php/login.php" class="form col-md-12 center-block" method="post">
-                <input style="display: none" type = "number" value="2" name="type">
->>>>>>> origin/master
                 <div class="form-group">
-                  <input type="text" class="form-control input-lg" placeholder="商户ID" name="name">
+                  <input type="text" class="form-control input-lg" placeholder="用户名">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw">
+                  <input type="password" class="form-control input-lg" placeholder="登录密码">
                 </div>
                 <div class="form-group">
                   <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
@@ -173,20 +245,26 @@
         </ol>
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="..." alt="...">
+        <div class="carousel-inner" role="listbox" align="center">
+          <div class="item active" style="text-align: center;">
+            <img src="http://img.taopic.com/uploads/allimg/121019/240425-12101920154274.jpg" style="height: 500px; margin-left: auto;margin-right: auto;" alt="...">
             <div class="carousel-caption">
-              ...
+              
             </div>
           </div>
           <div class="item">
-            <img src="..." alt="...">
+            <img src="http://img.taopic.com/uploads/allimg/130410/240403-130410064F013.jpg" style="height: 500px; margin-left: auto;margin-right: auto;" alt="...">
             <div class="carousel-caption">
-              ...
+              
             </div>
           </div>
-          ...
+          <div class="item">
+            <img src="http://pic9.nipic.com/20100820/2531170_092329970239_2.jpg" style="height: 500px; margin-left: auto;margin-right: auto;"  alt="...">
+            <div class="carousel-caption">
+              
+            </div>
+          </div>
+          
         </div>
 
         <!-- Controls -->
@@ -212,35 +290,345 @@
                   </ul>
               </div>
               <div class="col-xs-8">
-                  <h2 id="section-1">美食</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</p>
-                  <p>Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit at lacus blandit, commodo iaculis justo viverra. Etiam vitae est arcu. Mauris vel congue dolor. Aliquam eget mi mi. Fusce quam tortor, commodo ac dui quis, bibendum viverra erat. Maecenas mattis lectus enim, quis tincidunt dui molestie euismod. Curabitur et diam tristique, accumsan nunc eu, hendrerit tellus.</p>
-                  <hr>
-                  <h2 id="section-2">酒店</h2>
-                  <p>Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat accumsan. Mauris quis dapibus orci. In dapibus velit blandit pharetra tincidunt. Quisque non sapien nec lacus condimentum facilisis ut iaculis enim. Sed viverra interdum bibendum. Donec ac sollicitudin dolor. Sed fringilla vitae lacus at rutrum. Phasellus congue vestibulum ligula sed consequat.</p>
-                  <p>Vestibulum consectetur scelerisque lacus, ac fermentum lorem convallis sed. Nam odio tortor, dictum quis malesuada at, pellentesque vitae orci. Vivamus elementum, felis eu auctor lobortis, diam velit egestas lacus, quis fermentum metus ante quis urna. Sed at facilisis libero. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum bibendum blandit dolor. Nunc orci dolor, molestie nec nibh in, hendrerit tincidunt ante. Vivamus sem augue, hendrerit non sapien in, mollis ornare augue.</p>
-                  <hr>
-                  <h2 id="section-3">电影</h2>
-                  <p>Integer pulvinar leo id risus pellentesque vestibulum. Sed diam libero, sodales eget sapien vel, porttitor bibendum enim. Donec sed nibh vitae lorem porttitor blandit in nec ante. Pellentesque vitae metus ipsum. Phasellus sed nunc ac sem malesuada condimentum. Etiam in aliquam lectus. Nam vel sapien diam. Donec pharetra id arcu eget blandit. Proin imperdiet mattis augue in porttitor. Quisque tempus enim id lobortis feugiat. Suspendisse tincidunt risus quis dolor fringilla blandit. Ut sed sapien at purus lacinia porttitor. Nullam iaculis, felis a pretium ornare, dolor nisl semper tortor, vel sagittis lacus est consequat eros. Sed id pretium nisl. Curabitur dolor nisl, laoreet vitae aliquam id, tincidunt sit amet mauris.</p>
-                  <p>Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget ante rutrum adipiscing. Cras interdum ipsum mattis, tempus mauris vel, semper ipsum. Duis sed dolor ut enim lobortis pellentesque ultricies ac ligula. Pellentesque convallis elit nisi, id vulputate ipsum ullamcorper ut. Cras ac pulvinar purus, ac viverra est. Suspendisse potenti. Integer pellentesque neque et elementum tempus. Curabitur bibendum in ligula ut rhoncus.</p>
-                  <p>Quisque pharetra velit id velit iaculis pretium. Nullam a justo sed ligula porta semper eu quis enim. Pellentesque pellentesque, metus at facilisis hendrerit, lectus velit facilisis leo, quis volutpat turpis arcu quis enim. Nulla viverra lorem elementum interdum ultricies. Suspendisse accumsan quam nec ante mollis tempus. Morbi vel accumsan diam, eget convallis tellus. Suspendisse potenti.</p>
-                  <hr>
-                  <h2 id="section-4">KTV</h2>
-                  <p>Suspendisse a orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus vitae convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas a. Sed luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo fringilla tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices nunc sed ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero nec dui convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
-                  <p>Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit at lacus blandit, commodo iaculis justo viverra. Etiam vitae est arcu. Mauris vel congue dolor. Aliquam eget mi mi. Fusce quam tortor, commodo ac dui quis, bibendum viverra erat. Maecenas mattis lectus enim, quis tincidunt dui molestie euismod. Curabitur et diam tristique, accumsan nunc eu, hendrerit tellus.</p>
-                  <p>Phasellus fermentum, neque sit amet sodales tempor, enim ante interdum eros, eget luctus ipsum eros ut ligula. Nunc ornare erat quis faucibus molestie. Proin malesuada consequat commodo. Mauris iaculis, eros ut dapibus luctus, massa enim elementum purus, sit amet tristique purus purus nec felis. Morbi vestibulum sapien eget porta pulvinar. Nam at quam diam. Proin rhoncus, felis elementum accumsan dictum, felis nisi vestibulum tellus, et ultrices risus felis in orci. Quisque vestibulum sem nisl, vel congue leo dictum nec. Cras eget est at velit sagittis ullamcorper vel et lectus. In hac habitasse platea dictumst. Etiam interdum iaculis velit, vel sollicitudin lorem feugiat sit amet. Etiam luctus, quam sed sodales aliquam, lorem libero hendrerit urna, faucibus rhoncus massa nibh at felis. Curabitur ac tempus nulla, ut semper erat. Vivamus porta ullamcorper sem, ornare egestas mauris facilisis id.</p>
-                  <p>Ut ut risus nisl. Fusce porttitor eros at magna luctus, non congue nulla eleifend. Aenean porttitor feugiat dolor sit amet facilisis. Pellentesque venenatis magna et risus commodo, a commodo turpis gravida. Nam mollis massa dapibus urna aliquet, quis iaculis elit sodales. Sed eget ornare orci, eu malesuada justo. Nunc lacus augue, dictum quis dui id, lacinia congue quam. Nulla sem sem, aliquam nec dolor ac, tempus convallis nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla suscipit convallis iaculis. Quisque eget commodo ligula. Praesent leo dui, facilisis quis eleifend in, aliquet vitae nunc. Suspendisse fermentum odio ac massa ultricies pellentesque. Fusce eu suscipit massa.</p>
-                  <hr>
-                  <h2 id="section-5">生活服务</h2>
-                  <p>Nam eget purus nec est consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit amet. Etiam porttitor dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus aliquet. Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio sagittis sed. Donec vitae ullamcorper purus. Vivamus non metus ac justo porta volutpat.</p>
-                  <p>Vivamus mattis accumsan erat, vel convallis risus pretium nec. Integer nunc nulla, viverra ut sem non, scelerisque vehicula arcu. Fusce bibendum convallis augue sit amet lobortis. Cras porta urna turpis, sodales lobortis purus adipiscing id. Maecenas ullamcorper, turpis suscipit pellentesque fringilla, massa lacus pulvinar mi, nec dignissim velit arcu eget purus. Nam at dapibus tellus, eget euismod nisl. Ut eget venenatis sapien. Vivamus vulputate varius mauris, vel varius nisl facilisis ac. Nulla aliquet justo a nibh ornare, eu congue neque rutrum.</p>
-                  <p>Suspendisse a orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus vitae convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas a. Sed luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo fringilla tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices nunc sed ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero nec dui convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
-                  <p>Morbi sed fermentum ipsum. Morbi a orci vulputate tortor ornare blandit a quis orci. Donec aliquam sodales gravida. In ut ullamcorper nisi, ac pretium velit. Vestibulum vitae lectus volutpat, consequat lorem sit amet, pulvinar tellus. In tincidunt vel leo eget pulvinar. Curabitur a eros non lacus malesuada aliquam. Praesent et tempus odio. Integer a quam nunc. In hac habitasse platea dictumst. Aliquam porta nibh nulla, et mattis turpis placerat eget. Pellentesque dui diam, pellentesque vel gravida id, accumsan eu magna. Sed a semper arcu, ut dignissim leo.</p>
-                  <p>Sed vitae lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh velit, fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum. Pellentesque ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida semper. In condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh. Pellentesque blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+                  <h2 id="section-1">美食<a class="more" >>>更多</a></h2>
+                  
+                  <div class="content-wrap">
+                    <div class="content" id="food1">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【8店通用】芦月轩羊蝎子</h4>
+                          <div>100元午餐代金劵1张，全场通用，可叠加</div>
+                          <span class="money-highlight">¥69.9</span>门店价 <span class="money">¥100</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="food2">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/deal/e5bc1b5be432d585a602a89c59dd3bb4451268.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【北京西站】汉巴味德自助餐厅</h4>
+                          <div>单人工作日午餐，提供免费WiFi</div>
+                          <span class="money-highlight">¥79</span>门店价 <span class="money">¥89</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="food3">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/deal/4d373497ea2db94a2e8c7cec309fa3c935167.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                       <div class="changetype">
+                          <h4>【6店通用】火炉火芝士排骨</h4>
+                          <div>经典芝士排骨套餐，建议2人使用</div>
+                          <span class="money-highlight">¥158</span>门店价 <span class="money">¥248</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="food4">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/deal/04573ebf3d16d94605f6097b7fdeda89194047.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【30店通用】金百万烤鸭店</h4>
+                          <div>烤鸭1套，提供免费WiFi</div>
+                          <span class="money-highlight">¥79</span>门店价 <span class="money">¥108</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="food5">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/deal/__50206932__5152372.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【11店通用】京味斋</h4>
+                          <div>100元代金券1张，全场通用，可叠加使用</div>
+                          <span class="money-highlight">¥92</span>门店价 <span class="money">¥100</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="food6">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/deal/__47211057__9892147.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【25店通用】韩时烤肉</h4>
+                          <div>代金券1张，全场通用，可叠加使用</div>
+                          <span class="money-highlight">¥92</span>门店价 <span class="money">¥100</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <h2 id="section-2">酒店<a class="more" >>>更多</a></h2>
+                  <div class="content-wrap">
+                    <div class="content" id="hotel1">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/hotel/898f46d2222891ffb7e829c841e1b6a61617886.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【东直门】北京二环国际青年旅舍</h4>
+                          <div>豪华大床房钟点房4小时，免费WiFi。</div>
+                          <span class="money-highlight">¥99</span>门店价 <span class="money">¥129</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="hotel2">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/deal/c2d49b371cee28c4147233309dbeee9a54999.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【良乡】嘉悦程宾馆</h4>
+                          <div>大床房（特惠）钟点房4小时，免费WiFi。</div>
+                          <span class="money-highlight">¥50</span>门店价 <span class="money">¥120</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="hotel3">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/hotel/66f8f28ee84a098df93ec12415c6ff9f39597.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【旧宫】优家快捷宾馆</h4>
+                          <div>【冬季特惠】大床房钟点房4小时，免费</div>
+                          <span class="money-highlight">¥85</span>门店价 <span class="money">¥120</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="hotel4">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/hotel/96298f09ed4d6c00cb5af8a9bd4166482310244.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【沙河】麻雀</h4>
+                          <div>【暖气开放】美式乡村田园主题大床房钟</div>
+                          <span class="money-highlight">¥59</span>门店价 <span class="money">¥89</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="hotel5">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/hotel/0d2b1ead69592eebbb3212029627487128990.jpeg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【良乡】皇都大酒店</h4>
+                          <div>大床房（进店有礼）钟点房4小时，免费</div>
+                          <span class="money-highlight">¥66</span>门店价 <span class="money">¥120</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="hotel6">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/hotel/1f2403f2d3f82f63b43a4817ad8a1c43323527.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【北大地/万丰路】汉庭</h4>
+                          <div>钟点房4小时，标准双床房（延时退房到</div>
+                          <span class="money-highlight">¥80</span>门店价 <span class="money">¥120</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <h2 id="section-3">电影<a class="more" >>>更多</a></h2>
+                  <div class="content-wrap cinema-wrap">
+                    <div class="content" id="movie1">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/deal/ce5ad9443c58e9b40236715a4621e7d9128474.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【5店通用】星美汇</h4>
+                          <div>浪漫红酒双人套餐，提供免费WiFi</div>
+                          <span class="money-highlight">¥99</span>门店价 <span class="money">¥156</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="movie2">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/deal/ef1de25c0ddc3e60b38bfb125eb2e1a3339639.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【三里屯】艾米·1895电影街</h4>
+                          <div>包间套餐，建议1-4人使用，提供免费WiFi</div>
+                          <span class="money-highlight">¥198</span>门店价 <span class="money">¥410</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="movie3"></div>
+                    
+                  </div>
+                 
+                  <h2 id="section-4">KTV<a class="more" >>>更多</a></h2>
+                  <div class="content-wrap">
+                    <div class="content" id="KTV1">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/dpdeal/d22a0464434600f50128947d28ab11b3617441.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【29店通用】唱吧麦颂量贩式KTV</h4>
+                          <div>周一至周日全时段欢唱套餐</div>
+                          <span class="money-highlight">¥45</span> 门店价 <span class="money">¥560</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="KTV2">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/dpdeal/ba0f20fb00b0ce6abcdb06708a499b4a93148.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【五道口】欢乐汇量贩KTV</h4>
+                          <div>下午场/晚场/午夜场4小时ktv欢唱券</div>
+                          <span class="money-highlight">¥39</span> 门店价 <span class="money">¥264</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="KTV3">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/dpdeal/e2f7b1fda95ecb5d6405bb397d3821c2135625.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【良乡】纯k音乐氧吧量贩KTV</h4>
+                          <div>3选1时段欢唱</div>
+                          <span class="money-highlight">¥15</span> 门店价 <span class="money">¥30</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="KTV4">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/dpdeal/c7f9b01329801201de0572e9bfa8337691082.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【八里庄】亿好声音量贩KTV</h4>
+                          <div>KTV包厢/酒水/美食超值兑换券</div>
+                          <span class="money-highlight">¥36</span>    门店价 <span class="money">¥249</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="KTV5">
+                       <a href="#">
+                        <img src="http://p1.meituan.net/dpdeal/781fe224da4ee4dd6095ef9ae6b921ec93895.jpg.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>5号量贩式KTV（天通苑店）</h4>
+                          <div>KTV包厢/酒水/美食</div>
+                          <span class="money-highlight">¥19.9</span>    门店价 <span class="money">¥64</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="KTV6">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/dpdeal/3f4df27ba44f2fb58f48cbd2d4866a2261105.jpg.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>北外flower ktv</h4>
+                          <div>KTV包厢/酒水/美食</div>
+                          <span class="money-highlight">¥16.5</span>    门店价 <span class="money">¥71</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <h2 id="section-5">生活服务<a class="more" >>>更多</a></h2>
+                  <div class="content-wrap">
+                    <div class="content" id="life1">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/deal/2b2593fbca655a09613c8f92f8514d261038723.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【九棵树】来顺汽车服务有限公司</h4>
+                          <div>普洗1次，仅限5座及以下车型</div>
+                          <span class="money-highlight">¥9.8</span> 门店价 <span class="money">¥50</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="life2">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/dpdeal/a8a36bff3253d3478d8e10b07006dc16199762.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【9店通用】先花店</h4>
+                          <div>11枝红/粉玫 19枝红/粉康 鲜花预订</div>
+                          <span class="money-highlight">¥87</span> 门店价 <span class="money">¥280</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="life3">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/deal/6c9f5333645f60c6af6d176225908ac875160.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【回龙观】博世车联</h4>
+                          <div>普洗1次，仅限5座及以下车型</div>
+                          <span class="money-highlight">¥14.8</span> 门店价 <span class="money">¥30</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="life4">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/dpdeal/909f3975110231345734b4d640243bfa148851.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【13店通用】玫瑰花语鲜花速递</h4>
+                          <div>特价玫瑰3枝、红色白色粉色香槟色颜色任选</div>
+                          <span class="money-highlight">¥10</span> 门店价 <span class="money">¥45</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="life5">
+                      <a href="#">
+                        <img src="http://p1.meituan.net/dpdeal/17fb38f100025db35f385470af0f2dae53737.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【9店通用】玫瑰花坊</h4>
+                          <div>差价券</div>
+                          <span class="money-highlight">¥0.98</span> 门店价 <span class="money">¥2</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="content" id="life6">
+                      <a href="#">
+                        <img src="http://p0.meituan.net/dpdeal/d0514542211a53a3e3f154840e49ec17218671.jpg@260w_154h_1e.webp" class="content-img">
+                      </a>  
+                      <a class="differenta" href="#">
+                        <div class="changetype">
+                          <h4>【6店通用】鸿到家家政</h4>
+                          <div>鸿到家家政 1小时保洁钟点工</div>
+                          <span class="money-highlight">¥39</span> 门店价 <span class="money">¥50</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  
               </div>
           </div>
       </div>
-
+      <div clss="use"></div>
       <nav class="navbar navbar-default navbar-inverse navbar-change" role="navigation">
         <p class="mynavbartext">联系我们：QQ123456789</p>
       </nav>
