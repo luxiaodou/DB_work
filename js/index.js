@@ -11,7 +11,7 @@ $(document).ready(function(){
 function submit1(){ 
     var na=document.getElementById("user1").value;
     var pw=document.getElementById("pass1").value;
-    if (na==null||pw==null) {alert("请填写完全");}
+    if (na==""||pw=="") {alert("请填写完全");}
     else{
     // alert(document.getElementById("user1").value); 
     $.ajax({
@@ -32,7 +32,7 @@ function submit1(){
           usernameNow=json.id;
           logined();
         }else{
-          alert("用户名密码错误！");
+          alert("用户名或密码错误！");
         }
       },
       error: function(jqXHR){     
@@ -123,7 +123,56 @@ function logined(){
   userdrop.style.display="block";
 }
 
+
+
 function delCookie(){
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   window.location.reload();
+}
+
+function load(){
+  checkCookie();
+  loadlo();
+}
+
+function loadlo(){
+  for (var i = 1 ; i < 6; i++) {
+    $.ajax({
+      type:"POST",
+      url:"php/loadindex.php",
+      datatype:"json",
+      async: false,
+      data:{
+        class:i
+      },
+      success: function(items){
+        // alert("success");
+        var json=eval('('+items+')');
+        var j=1;
+        for(var o in items){
+          var img=document.getElementById("class"+i+"-"+j+"-img");
+          var h=document.getElementById("class"+i+"-"+j+"-h");
+          var d=document.getElementById("class"+i+"-"+j+"-d");
+          var hm=document.getElementById("class"+i+"-"+j+"-hm");
+          var m=document.getElementById("class"+i+"-"+j+"-m");
+          img.parentNode.parentNode.id=items[o].id;
+          img.src=items[o].image;
+          h.innerHTML=items[o].name;
+          d.innerHTML=items[o].brief;
+          hm.innerHTML=items[o].price;
+          m.innerHTML=items[o].origin;
+          j++;
+          if(i==2||j==2)break;
+          if(j==6)break;
+        }
+      },
+      error: function(jqXHR){     
+     alert("发生错误：" + jqXHR.status);  
+    },   
+    });
+  }
+}
+
+function jump(thisid){
+  window.location.href="mer.html?id="+thisid;
 }

@@ -1,4 +1,13 @@
 var usernameNow;
+var strs= new Array(); //定义一数组 
+function subNum(){
+  if(parseInt(document.getElementById("num").value)>0){
+    document.getElementById("num").value=parseInt(document.getElementById("num").value)-1;
+  }
+}
+function addNum(){
+  document.getElementById("num").value=parseInt(document.getElementById("num").value)+1;
+}
 
 function submit1(){ 
     var na=document.getElementById("user1").value;
@@ -118,4 +127,65 @@ function logined(){
 function delCookie(){
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   window.location.reload();
+}
+
+function loadmer(){
+  checkCookie();
+
+  strs=window.location.href.split("="); //字符分割 
+  // alert(strs[1]);
+  $.ajax({
+      type:"POST",
+      url:"php/loadmer.php",
+      datatype:"json",
+      async: false,
+      data:{
+        id:strs[1]
+      },
+      success: function(o){
+        // alert("success");
+        var json=eval('('+o+')');
+          var img=document.getElementById("merImg").childNodes[0];
+          var h=document.getElementById("merName").childNodes[0];
+          var d=document.getElementById("merInfo").childNodes[0];
+          var hm=document.getElementById("hm");
+          var m=document.getElementById("m");
+          img.src=items[o].image;
+          h.innerHTML=items[o].name;
+          d.innerHTML=items[o].brief;
+          hm.innerHTML="¥"+items[o].price;
+          m.innerHTML="¥"+items[o].origin;
+
+        },
+        error: function(jqXHR){     
+       alert("发生错误：" + jqXHR.status);  
+      },  
+       
+    });
+}
+
+function addComment(){
+  var starNum=document.getElementById("commentLevel").value;
+  var getCom=document.getElementById("textCom").value;
+  // alert(getCom);
+  $.ajax({
+      type:"POST",
+      url:"php/loadmer.php",
+      datatype:"json",
+      async: false,
+      data:{
+        user:usernameNow,
+        item:strs[1],
+        star:starNum,
+        content:getCom
+      },
+      success: function(o){
+        // alert("success");
+          window.location.reload();
+        },
+      error: function(jqXHR){     
+       alert("发生错误：" + jqXHR.status);  
+      },  
+       
+    });
 }

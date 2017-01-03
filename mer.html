@@ -238,7 +238,7 @@ body{
 
 </style>
   </head>
-    <body data-spy="scroll" data-target="#myScrollspy" onload="checkCookie()">
+    <body data-spy="scroll" data-target="#myScrollspy" onload="loadmer()">
       <!-- top bar -->
       <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -363,9 +363,9 @@ body{
           <div id="price">
             <div id="priceInfo">
               <h4 style="display: inline-block;">团购价：</h4>
-              <span class="money-highlight" style="display: inline-block;">¥78</span>
+              <span class="money-highlight" style="display: inline-block;" id="hm">¥78</span>
               <h5 style="display: inline-block;">门店价：</h5>
-              <span class="money" style="display: inline-block;">¥100</span>
+              <span class="money" style="display: inline-block;" id="m">¥100</span>
               <div class="purInfo">
                 <div class="addborder">已售</div>
                 <div class="addborder">分</div>
@@ -472,10 +472,18 @@ body{
           </div>
           <div class="tab-pane fade" id="myComment">
             <form role="form"> 
-              <div class="form-group"> 
-                <textarea class="form-control" rows="10"></textarea> 
+              <div class="form-group">
+                <textarea class="form-control" rows="10" id="textCom"></textarea> 
               </div> 
-              <input type="button" class="btn btn-group btnsub" value="提交评价" id="submitComment">
+              <p style="display: inline-block;float: left;padding-top: 5px;">评分：</p>
+              <select id="commentLevel" class="form-control" style="display: inline-block; width: 80px; float: left;">
+                <option value="1">1分</option>
+                <option value="2">2分</option>
+                <option value="3">3分</option>
+                <option value="4">4分</option>
+                <option value="5">5分</option>
+              </select>
+              <input type="button" class="btn btn-group btnsub" value="提交评价" id="submitComment" onclick="addComment()">
             </form>
           </div>
         </div>
@@ -492,14 +500,7 @@ body{
    
     <script type="text/javascript">
 
-      function subNum(){
-        if(parseInt(document.getElementById("num").value)>0){
-          document.getElementById("num").value=parseInt(document.getElementById("num").value)-1;
-        }
-      }
-      function addNum(){
-        document.getElementById("num").value=parseInt(document.getElementById("num").value)+1;
-      }
+      
       
       // 要传json内容：用户名，商品名，商品描述，商品价格，商品原价，评论星级，评论内容
     </script>

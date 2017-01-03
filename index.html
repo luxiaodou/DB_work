@@ -135,7 +135,7 @@
  
 </script>
   </head>
-    <body data-spy="scroll" data-target="#myScrollspy" onload="checkCookie()">
+    <body data-spy="scroll" data-target="#myScrollspy" onload="load()">
       <!-- top bar -->
       <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -306,75 +306,75 @@
               <div class="col-xs-8">
                 <h2 id="section-1" >美食<a class="more" >>>更多</a></h2>
                 <div class="content-wrap" >
-                  <div class="content" id="food1">
+                  <div class="content" id="food1" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp" class="content-img" id="class1-1-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【8店通用】芦月轩羊蝎子</h4>
-                        <div>100元午餐代金劵1张，全场通用，可叠加</div>
-                        <span class="money-highlight">¥69.9</span>门店价 <span class="money">¥100</span>
+                        <h4 id="class1-1-h">【8店通用】芦月轩羊蝎子</h4>
+                        <div id="class1-1-d">100元午餐代金劵1张，全场通用，可叠加</div>
+                        <span class="money-highlight" id="class1-1-mh">¥69.9</span>门店价 <span class="money" id="class1-1-m">¥100</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="food2">
+                  <div class="content" id="food2" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/deal/e5bc1b5be432d585a602a89c59dd3bb4451268.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/deal/e5bc1b5be432d585a602a89c59dd3bb4451268.jpg@260w_154h_1e.webp" class="content-img" id="class1-2-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【北京西站】汉巴味德自助餐厅</h4>
-                        <div>单人工作日午餐，提供免费WiFi</div>
-                        <span class="money-highlight">¥79</span>门店价 <span class="money">¥89</span>
+                        <h4 id="class1-2-h">【北京西站】汉巴味德自助餐厅</h4>
+                        <div id="class1-2-d">单人工作日午餐，提供免费WiFi</div>
+                        <span class="money-highlight" id="class1-2-mh">¥79</span>门店价 <span class="money" id="class1-2-m">¥89</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="food3">
+                  <div class="content" id="food3" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/deal/4d373497ea2db94a2e8c7cec309fa3c935167.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/deal/4d373497ea2db94a2e8c7cec309fa3c935167.jpg@260w_154h_1e.webp" class="content-img" id="class1-3-img">
                     </a>  
                     <a class="differenta" href="#">
                      <div class="changetype">
-                        <h4>【6店通用】火炉火芝士排骨</h4>
-                        <div>经典芝士排骨套餐，建议2人使用</div>
-                        <span class="money-highlight">¥158</span>门店价 <span class="money">¥248</span>
+                        <h4 id="class1-3-h">【6店通用】火炉火芝士排骨</h4>
+                        <div id="class1-3-d">经典芝士排骨套餐，建议2人使用</div>
+                        <span class="money-highlight" id="class1-3-mh">¥158</span>门店价 <span class="money" id="class1-3-m">¥248</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="food4">
+                  <div class="content" id="food4" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/deal/04573ebf3d16d94605f6097b7fdeda89194047.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/deal/04573ebf3d16d94605f6097b7fdeda89194047.jpg@260w_154h_1e.webp" class="content-img" id="class1-food4-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【30店通用】金百万烤鸭店</h4>
-                        <div>烤鸭1套，提供免费WiFi</div>
-                        <span class="money-highlight">¥79</span>门店价 <span class="money">¥108</span>
+                        <h4 id="class1-4-h">【30店通用】金百万烤鸭店</h4>
+                        <div id="class1-4-d">烤鸭1套，提供免费WiFi</div>
+                        <span class="money-highlight" id="class1-4-mh">¥79</span>门店价 <span class="money" id="class1-4-m">¥108</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="food5">
+                  <div class="content" id="food5" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/deal/__50206932__5152372.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/deal/__50206932__5152372.jpg@260w_154h_1e.webp" class="content-img" id="class1-5-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【11店通用】京味斋</h4>
-                        <div>100元代金券1张，全场通用，可叠加使用</div>
-                        <span class="money-highlight">¥92</span>门店价 <span class="money">¥100</span>
+                        <h4 id="class1-5-h">【11店通用】京味斋</h4>
+                        <div id="class1-5-d">100元代金券1张，全场通用，可叠加使用</div>
+                        <span class="money-highlight" id="class1-5-mh">¥92</span>门店价 <span class="money" id="class1-5-m">¥100</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="food6">
+                  <div class="content" id="food6" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/deal/__47211057__9892147.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/deal/__47211057__9892147.jpg@260w_154h_1e.webp" class="content-img" id="class1-6-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【25店通用】韩时烤肉</h4>
-                        <div>代金券1张，全场通用，可叠加使用</div>
-                        <span class="money-highlight">¥92</span>门店价 <span class="money">¥100</span>
+                        <h4 id="class1-6-h">【25店通用】韩时烤肉</h4>
+                        <div id="class1-6-d">代金券1张，全场通用，可叠加使用</div>
+                        <span class="money-highlight" id="class1-6-mh">¥92</span>门店价 <span class="money" id="class1-6-m">¥100</span>
                       </div>
                     </a>
                   </div>
@@ -382,75 +382,75 @@
                 
                 <h2 id="section-2">酒店<a class="more" >>>更多</a></h2>
                 <div class="content-wrap">
-                  <div class="content" id="hotel1">
+                  <div class="content" id="hotel1" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/hotel/898f46d2222891ffb7e829c841e1b6a61617886.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/hotel/898f46d2222891ffb7e829c841e1b6a61617886.jpg@260w_154h_1e.webp" class="content-img" id="class2-1-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【东直门】北京二环国际青年旅舍</h4>
-                        <div>豪华大床房钟点房4小时，免费WiFi。</div>
-                        <span class="money-highlight">¥99</span>门店价 <span class="money">¥129</span>
+                        <h4 id="class2-1-h">【东直门】北京二环国际青年旅舍</h4>
+                        <div id="class2-1-d">豪华大床房钟点房4小时，免费WiFi。</div>
+                        <span class="money-highlight" id="class2-1-hm">¥99</span>门店价 <span class="money" id="class2-1-m">¥129</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="hotel2">
+                  <div class="content" id="hotel2" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/deal/c2d49b371cee28c4147233309dbeee9a54999.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/deal/c2d49b371cee28c4147233309dbeee9a54999.jpg@260w_154h_1e.webp" class="content-img" id="class2-2-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【良乡】嘉悦程宾馆</h4>
-                        <div>大床房（特惠）钟点房4小时，免费WiFi。</div>
-                        <span class="money-highlight">¥50</span>门店价 <span class="money">¥120</span>
+                        <h4 id="class2-2-h">【良乡】嘉悦程宾馆</h4>
+                        <div id="class2-2-d">大床房（特惠）钟点房4小时，免费WiFi。</div>
+                        <span class="money-highlight" id="class2-2-hm">¥50</span>门店价 <span class="money" id="class2-2-m">¥120</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="hotel3">
+                  <div class="content" id="hotel3" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/hotel/66f8f28ee84a098df93ec12415c6ff9f39597.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/hotel/66f8f28ee84a098df93ec12415c6ff9f39597.jpg@260w_154h_1e.webp" class="content-img" id="class2-3-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【旧宫】优家快捷宾馆</h4>
-                        <div>【冬季特惠】大床房钟点房4小时，免费</div>
-                        <span class="money-highlight">¥85</span>门店价 <span class="money">¥120</span>
+                        <h4 id="class2-3-h">【旧宫】优家快捷宾馆</h4>
+                        <div id="class2-3-d">【冬季特惠】大床房钟点房4小时，免费</div>
+                        <span class="money-highlight" id="class2-3-hm">¥85</span>门店价 <span class="money" id="class2-3-m">¥120</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="hotel4">
+                  <div class="content" id="hotel4" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/hotel/96298f09ed4d6c00cb5af8a9bd4166482310244.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/hotel/96298f09ed4d6c00cb5af8a9bd4166482310244.jpg@260w_154h_1e.webp" class="content-img" id="class2-4-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【沙河】麻雀</h4>
-                        <div>【暖气开放】美式乡村田园主题大床房钟</div>
-                        <span class="money-highlight">¥59</span>门店价 <span class="money">¥89</span>
+                        <h4 id="class2-4-h">【沙河】麻雀</h4>
+                        <div id="class2-4-d">【暖气开放】美式乡村田园主题大床房钟</div>
+                        <span class="money-highlight" id="class2-4-hm">¥59</span>门店价 <span class="money" id="class2-4-m">¥89</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="hotel5">
+                  <div class="content" id="hotel5" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/hotel/0d2b1ead69592eebbb3212029627487128990.jpeg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/hotel/0d2b1ead69592eebbb3212029627487128990.jpeg@260w_154h_1e.webp" class="content-img" id="class2-5-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【良乡】皇都大酒店</h4>
-                        <div>大床房（进店有礼）钟点房4小时，免费</div>
-                        <span class="money-highlight">¥66</span>门店价 <span class="money">¥120</span>
+                        <h4 id="class2-5-h">【良乡】皇都大酒店</h4>
+                        <div id="class2-5-d">大床房（进店有礼）钟点房4小时，免费</div>
+                        <span class="money-highlight" id="class2-5-hm">¥66</span>门店价 <span class="money" id="class2-5-m">¥120</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="hotel6">
+                  <div class="content" id="hotel6" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/hotel/1f2403f2d3f82f63b43a4817ad8a1c43323527.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/hotel/1f2403f2d3f82f63b43a4817ad8a1c43323527.jpg@260w_154h_1e.webp" class="content-img" id="class2-6-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【北大地/万丰路】汉庭</h4>
-                        <div>钟点房4小时，标准双床房（延时退房到</div>
-                        <span class="money-highlight">¥80</span>门店价 <span class="money">¥120</span>
+                        <h4 id="class2-6-h">【北大地/万丰路】汉庭</h4>
+                        <div id="class2-6-d">钟点房4小时，标准双床房（延时退房到</div>
+                        <span class="money-highlight" id="class2-6-hm">¥80</span>门店价 <span class="money" id="class2-6-m">¥120</span>
                       </div>
                     </a>
                   </div>
@@ -458,27 +458,27 @@
                 
                 <h2 id="section-3">电影<a class="more" >>>更多</a></h2>
                 <div class="content-wrap cinema-wrap">
-                  <div class="content" id="movie1">
+                  <div class="content" id="movie1" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/deal/ce5ad9443c58e9b40236715a4621e7d9128474.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/deal/ce5ad9443c58e9b40236715a4621e7d9128474.jpg@260w_154h_1e.webp" class="content-img" id="class3-1-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【5店通用】星美汇</h4>
-                        <div>浪漫红酒双人套餐，提供免费WiFi</div>
-                        <span class="money-highlight">¥99</span>门店价 <span class="money">¥156</span>
+                        <h4 id="class3-1-h">【5店通用】星美汇</h4>
+                        <div id="class3-1-d">浪漫红酒双人套餐，提供免费WiFi</div>
+                        <span class="money-highlight" id="class3-1-hm">¥99</span>门店价 <span class="money" id="class3-1-m">¥156</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="movie2">
+                  <div class="content" id="movie2" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/deal/ef1de25c0ddc3e60b38bfb125eb2e1a3339639.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/deal/ef1de25c0ddc3e60b38bfb125eb2e1a3339639.jpg@260w_154h_1e.webp" class="content-img" id="class3-2-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【三里屯】艾米·1895电影街</h4>
-                        <div>包间套餐，建议1-4人使用，提供免费WiFi</div>
-                        <span class="money-highlight">¥198</span>门店价 <span class="money">¥410</span>
+                        <h4 id="class3-2-h">【三里屯】艾米·1895电影街</h4>
+                        <div id="class3-2-d">包间套餐，建议1-4人使用，提供免费WiFi</div>
+                        <span class="money-highlight" id="class3-2-hm">¥198</span>门店价 <span class="money" id="class3-2-m">¥410</span>
                       </div>
                     </a>
                   </div>
@@ -488,75 +488,75 @@
                
                 <h2 id="section-4">KTV<a class="more" >>>更多</a></h2>
                 <div class="content-wrap">
-                  <div class="content" id="KTV1">
+                  <div class="content" id="KTV1" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/dpdeal/d22a0464434600f50128947d28ab11b3617441.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/dpdeal/d22a0464434600f50128947d28ab11b3617441.jpg@260w_154h_1e.webp" class="content-img" id="class4-1-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【29店通用】唱吧麦颂量贩式KTV</h4>
-                        <div>周一至周日全时段欢唱套餐</div>
-                        <span class="money-highlight">¥45</span> 门店价 <span class="money">¥560</span>
+                        <h4 id="class4-1-h">【29店通用】唱吧麦颂量贩式KTV</h4>
+                        <div id="class4-1-d">周一至周日全时段欢唱套餐</div>
+                        <span class="money-highlight" id="class4-1-hm">¥45</span> 门店价 <span class="money" id="class4-1-m">¥560</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="KTV2">
+                  <div class="content" id="KTV2" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/dpdeal/ba0f20fb00b0ce6abcdb06708a499b4a93148.jpg" class="content-img">
+                      <img src="http://p0.meituan.net/dpdeal/ba0f20fb00b0ce6abcdb06708a499b4a93148.jpg@260w_154h_1e.webp" class="content-img" id="class4-2-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【五道口】欢乐汇量贩KTV</h4>
-                        <div>下午场/晚场/午夜场4小时ktv欢唱券</div>
-                        <span class="money-highlight">¥39</span> 门店价 <span class="money">¥264</span>
+                        <h4 id="class4-2-h">【五道口】欢乐汇量贩KTV</h4>
+                        <div id="class4-2-d">下午场/晚场/午夜场4小时ktv欢唱券</div>
+                        <span class="money-highlight" id="class4-2-hm">¥39</span> 门店价 <span class="money" id="class4-2-m">¥264</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="KTV3">
+                  <div class="content" id="KTV3" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/dpdeal/e2f7b1fda95ecb5d6405bb397d3821c2135625.jpg" class="content-img">
+                      <img src="http://p1.meituan.net/dpdeal/e2f7b1fda95ecb5d6405bb397d3821c2135625.jpg@260w_154h_1e.webp" class="content-img" id="class4-3-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【良乡】纯k音乐氧吧量贩KTV</h4>
-                        <div>3选1时段欢唱</div>
-                        <span class="money-highlight">¥15</span> 门店价 <span class="money">¥30</span>
+                        <h4 id="class4-3-h">【良乡】纯k音乐氧吧量贩KTV</h4>
+                        <div id="class4-3-d">3选1时段欢唱</div>
+                        <span class="money-highlight" id="class4-3-hm">¥15</span> 门店价 <span class="money" id="class4-3-m">¥30</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="KTV4">
+                  <div class="content" id="KTV4" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/dpdeal/c7f9b01329801201de0572e9bfa8337691082.jpg" class="content-img">
+                      <img src="http://p0.meituan.net/dpdeal/c7f9b01329801201de0572e9bfa8337691082.jpg@260w_154h_1e.webp" class="content-img" id="class4-4-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【八里庄】亿好声音量贩KTV</h4>
-                        <div>KTV包厢/酒水/美食超值兑换券</div>
-                        <span class="money-highlight">¥36</span>    门店价 <span class="money">¥249</span>
+                        <h4 id="class4-4-h">【八里庄】亿好声音量贩KTV</h4>
+                        <div id="class4-4-d">KTV包厢/酒水/美食超值兑换券</div>
+                        <span class="money-highlight" id="class4-4-hm">¥36</span>    门店价 <span class="money" id="class4-4-m">¥249</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="KTV5">
+                  <div class="content" id="KTV5" onclick="jump(this.id)">
                      <a href="#">
-                      <img src="http://p1.meituan.net/dpdeal/781fe224da4ee4dd6095ef9ae6b921ec93895.jpg" class="content-img">
+                      <img src="http://p1.meituan.net/dpdeal/781fe224da4ee4dd6095ef9ae6b921ec93895.jpg.webp" class="content-img" id="class4-5-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>5号量贩式KTV（天通苑店）</h4>
-                        <div>KTV包厢/酒水/美食</div>
-                        <span class="money-highlight">¥19.9</span>    门店价 <span class="money">¥64</span>
+                        <h4 id="class4-5-h">5号量贩式KTV（天通苑店）</h4>
+                        <div id="class4-5-d">KTV包厢/酒水/美食</div>
+                        <span class="money-highlight" id="class4-5-hm">¥19.9</span>    门店价 <span class="money" id="class4-5-m">¥64</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="KTV6">
+                  <div class="content" id="KTV6" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/dpdeal/3f4df27ba44f2fb58f48cbd2d4866a2261105.jpg.webp" class="content-img">
+                      <img src="http://p0.meituan.net/dpdeal/3f4df27ba44f2fb58f48cbd2d4866a2261105.jpg.webp" class="content-img" id="class4-6-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>北外flower ktv</h4>
-                        <div>KTV包厢/酒水/美食</div>
-                        <span class="money-highlight">¥16.5</span>    门店价 <span class="money">¥71</span>
+                        <h4 id="class4-6-h">北外flower ktv</h4>
+                        <div id="class4-6-d">KTV包厢/酒水/美食</div>
+                        <span class="money-highlight" id="class4-6-hm">¥16.5</span>    门店价 <span class="money" id="class4-6-m">¥71</span>
                       </div>
                     </a>
                   </div>
@@ -564,75 +564,75 @@
                 
                 <h2 id="section-5">生活服务<a class="more" >>>更多</a></h2>
                 <div class="content-wrap">
-                  <div class="content" id="life1">
+                  <div class="content" id="life1" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/deal/2b2593fbca655a09613c8f92f8514d261038723.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/deal/2b2593fbca655a09613c8f92f8514d261038723.jpg@260w_154h_1e.webp" class="content-img" id="class5-1-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【九棵树】来顺汽车服务有限公司</h4>
-                        <div>普洗1次，仅限5座及以下车型</div>
-                        <span class="money-highlight">¥9.8</span> 门店价 <span class="money">¥50</span>
+                        <h4 id="class5-1-h">【九棵树】来顺汽车服务有限公司</h4>
+                        <div id="class5-1-d">普洗1次，仅限5座及以下车型</div>
+                        <span class="money-highlight" id="class5-1-hm">¥9.8</span> 门店价 <span class="money" id="class5-1-m">¥50</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="life2">
+                  <div class="content" id="life2" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/dpdeal/a8a36bff3253d3478d8e10b07006dc16199762.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/dpdeal/a8a36bff3253d3478d8e10b07006dc16199762.jpg@260w_154h_1e.webp" class="content-img" id="class5-2-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【9店通用】先花店</h4>
-                        <div>11枝红/粉玫 19枝红/粉康 鲜花预订</div>
-                        <span class="money-highlight">¥87</span> 门店价 <span class="money">¥280</span>
+                        <h4 id="class5-2-h">【9店通用】先花店</h4>
+                        <div id="class5-2-d">11枝红/粉玫 19枝红/粉康 鲜花预订</div>
+                        <span class="money-highlight" id="class5-2-hm">¥87</span> 门店价 <span class="money" id="class5-2-m">¥280</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="life3">
+                  <div class="content" id="life3" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/deal/6c9f5333645f60c6af6d176225908ac875160.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/deal/6c9f5333645f60c6af6d176225908ac875160.jpg@260w_154h_1e.webp" class="content-img" id="class5-3-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【回龙观】博世车联</h4>
-                        <div>普洗1次，仅限5座及以下车型</div>
-                        <span class="money-highlight">¥14.8</span> 门店价 <span class="money">¥30</span>
+                        <h4 id="class5-3-h">【回龙观】博世车联</h4>
+                        <div id="class5-3-d">普洗1次，仅限5座及以下车型</div>
+                        <span class="money-highlight" id="class5-3-hm">¥14.8</span> 门店价 <span class="money" id="class5-3-m">¥30</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="life4">
+                  <div class="content" id="life4" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/dpdeal/909f3975110231345734b4d640243bfa148851.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/dpdeal/909f3975110231345734b4d640243bfa148851.jpg@260w_154h_1e.webp" class="content-img" id="class5-4-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【13店通用】玫瑰花语鲜花速递</h4>
-                        <div>特价玫瑰3枝、红色白色粉色香槟色颜色任选</div>
-                        <span class="money-highlight">¥10</span> 门店价 <span class="money">¥45</span>
+                        <h4 id="class5-4-h">【13店通用】玫瑰花语鲜花速递</h4>
+                        <div id="class5-4-d">特价玫瑰3枝、红色白色粉色香槟色颜色任选</div>
+                        <span class="money-highlight" id="class5-4-hm">¥10</span> 门店价 <span class="money" id="class5-4-m">¥45</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="life5">
+                  <div class="content" id="life5" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p1.meituan.net/dpdeal/17fb38f100025db35f385470af0f2dae53737.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p1.meituan.net/dpdeal/17fb38f100025db35f385470af0f2dae53737.jpg@260w_154h_1e.webp" class="content-img" id="class5-5-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【9店通用】玫瑰花坊</h4>
-                        <div>差价券</div>
-                        <span class="money-highlight">¥0.98</span> 门店价 <span class="money">¥2</span>
+                        <h4 id="class5-5-h">【9店通用】玫瑰花坊</h4>
+                        <div id="class5-5-d">差价券</div>
+                        <span class="money-highlight" id="class5-5-hm">¥0.98</span> 门店价 <span class="money" id="class5-5-m">¥2</span>
                       </div>
                     </a>
                   </div>
-                  <div class="content" id="life6">
+                  <div class="content" id="life6" onclick="jump(this.id)">
                     <a href="#">
-                      <img src="http://p0.meituan.net/dpdeal/d0514542211a53a3e3f154840e49ec17218671.jpg@260w_154h_1e.webp" class="content-img">
+                      <img src="http://p0.meituan.net/dpdeal/d0514542211a53a3e3f154840e49ec17218671.jpg@260w_154h_1e.webp" class="content-img" id="class5-6-img">
                     </a>  
                     <a class="differenta" href="#">
                       <div class="changetype">
-                        <h4>【6店通用】鸿到家家政</h4>
-                        <div>鸿到家家政 1小时保洁钟点工</div>
-                        <span class="money-highlight">¥39</span> 门店价 <span class="money">¥50</span>
+                        <h4 id="class5-6-h">【6店通用】鸿到家家政</h4>
+                        <div id="class5-6-d">鸿到家家政 1小时保洁钟点工</div>
+                        <span class="money-highlight" id="class5-6-hm">¥39</span> 门店价 <span class="money" id="class5-6-m">¥50</span>
                       </div>
                     </a>
                   </div>
