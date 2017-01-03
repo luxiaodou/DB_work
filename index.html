@@ -21,118 +21,118 @@
     <script src="js/index.js"></script>
 <style >
 
-.carousel{
-  height: 500px;
-  background-color: #000;
-}
-.col-xs-8{
-  padding-left:0px;
-  padding-right:0px;
-}
-.center{
-  text-align: center;
-  margin: 0 auto;
-}
+  .carousel{
+    height: 500px;
+    background-color: #000;
+  }
+  .col-xs-8{  
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .center{
+    text-align: center;
+    margin: 0 auto;
+  }
 
-.navbar-change{
-  margin-top:200px;
-  border-radius: 0px;
-  margin-bottom: 0px;
-  margin: 0 auto;
-  text-align: center;
-}
+  .navbar-change{
+    margin-top:200px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-.mynavbartext{
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: #9d9d9d;
-}
+  .mynavbartext{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #9d9d9d;
+  }
 
-.content-wrap{
-  border: 2px solid #F2F2F2;
-  border-radius: 2px;
-  height:500px;
-  width:904px;
-  margin: 0 auto;
-  text-align: center;
-}
+  .content-wrap{
+    border: 2px solid #F2F2F2;
+    border-radius: 2px;
+    height:500px;
+    width:904px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-.cinema-wrap{
-  border: 2px solid #F2F2F2;
-  border-radius: 2px;
-  height:250px;
-  width:904px;
-  margin: 0 auto;
-  text-align: center;
-}
+  .cinema-wrap{
+    border: 2px solid #F2F2F2;
+    border-radius: 2px;
+    height:250px;
+    width:904px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-.content{
-  height: 250px;
-  width: 300px;
-  border: 1px solid #F2F2F2;
-  position: relative;
-  float: left;
+  .content{
+    height: 250px;
+    width: 300px;
+    border: 1px solid #F2F2F2;
+    position: relative;
+    float: left;
 
-}
-.content-img{
-  width: 88%;
-  height:63%;
-}
+  }
+  .content-img{
+    width: 88%;
+    height:63%;
+  }
 
-.differenta{
-  color: black;
-}
+  .differenta{
+    color: black;
+  }
 
-.differenta:hover{
-  color: black;
-  text-decoration:none;
-}
+  .differenta:hover{
+    color: black;
+    text-decoration:none;
+  }
 
-.use{
-  height: 20px;
-}
+  .use{
+    height: 20px;
+  }
 
-.money-highlight{
-  color:#f76120;
-  font-size:20px;
-}
+  .money-highlight{
+    color:#f76120;
+    font-size:20px;
+  }
 
-.money{
-  text-decoration: line-through;
-}
+  .money{
+    text-decoration: line-through;
+  }
 
-.changetype{
-  color:#2B2B2B;
-}
+  .changetype{
+    color:#2B2B2B;
+  }
 
-.changetype h4{
-  font-weight: bold;
-}
+  .changetype h4{
+    font-weight: bold;
+  }
 
-.fullcontent{
-  height: 500px;
-}
+  .fullcontent{
+    height: 500px;
+  }
 
-.more:hover{
-  color: blue;
-  text-decoration:none;
-}
+  .more:hover{
+    color: blue;
+    text-decoration:none;
+  }
 
-.more{
-  color: black;
-  font-size:20px ;
-  float: right;
-  padding-top: 3px; 
-  font-weight: normal;
-}
+  .more{
+    color: black;
+    font-size:20px ;
+    float: right;
+    padding-top: 3px; 
+    font-weight: normal;
+  }
 
-h2{
-  font-weight: bold;
-}
+  h2{
+    font-weight: bold;
+  }
 
 </style>
-<script>
-
+<script language="javascript">
+ 
 </script>
   </head>
     <body data-spy="scroll" data-target="#myScrollspy">
@@ -184,16 +184,16 @@ h2{
               <h1 class="text-center text-primary">登录</h1>
             </div>
             <div class="modal-body">
-              <form action="php/login.php" class="form col-md-12 center-block" method="post">
+              <form class="form col-md-12 center-block" method="post">
                 <input style="display: none" type = "number" value="1" name="type">
                 <div class="form-group">
-                  <input type="text" class="form-control input-lg" placeholder="用户名" name = "name">
+                  <input type="text" class="form-control input-lg" placeholder="用户名" name = "name" id="user1">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw">
+                  <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw" id="pass1">
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
+                  <button class="btn btn-primary btn-lg btn-block" onclick="submit1()">立刻登录</button>
                   <span><a href="#" onclick="alert('再注册一个吧')">忘记密码</a></span>
                   <span><a href="register.html" class="pull-right">注册</a></span>
                 </div>
@@ -216,18 +216,18 @@ h2{
               <h1 class="text-center text-primary">登录</h1>
             </div>
             <div class="modal-body">
-              <form action="php/login.php" class="form col-md-12 center-block" method="post">
+              <form class="form col-md-12 center-block" method="post">
                 <input style="display: none" type = "number" value="2" name="type">
                 <div class="form-group">
-                  <input type="text" class="form-control input-lg" placeholder="商户ID" name="name">
+                  <input type="text" class="form-control input-lg" placeholder="商户ID" name="name" id="user2">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw">
+                  <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw"  id="pass2">
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
+                  <button class="btn btn-primary btn-lg btn-block" onclick="submit2()">立刻登录</button>
                   <span><a href="#" onclick="alert('再注册一个吧')">忘记密码</a></span>
-                  <span><a href="#" class="pull-right">注册</a></span>
+                  <span><a href="register.html" class="pull-right">注册</a></span>
                 </div>
               </form>
             </div>
