@@ -7,7 +7,7 @@
  */
 require_once 'mysql.php';
 
-$conn = connectDb();
+$conn = uconnectDb();
 
 if (!isset($_POST['name'])) {
     die('user name not define!');

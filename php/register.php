@@ -46,7 +46,7 @@ if (empty($type)) {
 }
 
 $type = intval($type);
-$conn = connectDb();
+$conn = rconnectDb();
 
 if ($pw != $pw2) {
     printf("两次输入的密码不一致！");

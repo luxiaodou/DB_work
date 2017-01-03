@@ -7,15 +7,18 @@
  */
 
 define('MYSQL_HOST','localhost');
-define('MYSQL_USER','root');
-define('MYSQL_PW','');
-
+define('MYSQL_ROOT','root');
+define('MYSQL_ROOT_PW','');
+define('MYSQL_USER','user');
+define('MYSQL_USER_PW','user');
+define('MYSQL_SHOP','shop');
+define('MYSQL_SHOP_PW','shop');
 /**
- * 连接数据库所用函数
+ * 管理员连接数据库所用函数
  * @return resource
  */
-function connectDb() {
-    $conn = mysql_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PW);
+function rconnectDb() {
+    $conn = mysql_connect(MYSQL_HOST,MYSQL_ROOT,MYSQL_ROOT_PW);
     mysql_query("set names 'utf8'");    //解决中文乱码
     if (!$conn){
         die('Cannot access to DB');
@@ -24,3 +27,23 @@ function connectDb() {
     return $conn;
 }
 
+function uconnectDb() {
+    $conn = mysql_connect(MYSQL_HOST,MYSQL_USER,MYSQL_USER_PW);
+    mysql_query("set names 'utf8'");    //解决中文乱码
+    if (!$conn){
+        die('Cannot access to DB');
+    }
+    mysql_select_db('db_work');
+    return $conn;
+}
+
+
+function sconnectDb() {
+    $conn = mysql_connect(MYSQL_HOST,MYSQL_SHOP,MYSQL_SHOP_PW);
+    mysql_query("set names 'utf8'");    //解决中文乱码
+    if (!$conn){
+        die('Cannot access to DB');
+    }
+    mysql_select_db('db_work');
+    return $conn;
+}
