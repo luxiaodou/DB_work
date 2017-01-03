@@ -20,8 +20,15 @@
 require_once 'mysql.php';
 
 $conn = uconnectDb();
+<<<<<<< HEAD
 
 
+=======
+if (!isset ($_POST['data'])) {
+    die('JSON not define!');
+}
+
+>>>>>>> origin/master
 $name = $_POST['name'];
 $pw = $_POST['password'];
 $type = $_POST['type'];

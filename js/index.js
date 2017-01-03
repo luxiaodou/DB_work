@@ -8,6 +8,7 @@ $(document).ready(function(){
     });
 });
 
+<<<<<<< HEAD
 function submit1(){ 
     var na=document.getElementById("user1").value;
     var pw=document.getElementById("pass1").value;
@@ -18,6 +19,39 @@ function submit1(){
       type:"POST",
       url:"php/login.php",
       datatype:"json",
+=======
+  function submit1(){ 
+      // alert(document.getElementById("user1").value); 
+      $.ajax({
+        type:"POST",
+        url:"php/login.php",
+        datatype:"json",
+        async: false,
+        data:{
+          name:document.getElementById("user1").value,
+          password:document.getElementById("pass1").value,
+          type:1
+        },
+        success: function(data){
+          alert("success");
+          var json=eval('('+data+')');
+          alert(json);
+          alert(json.result);
+          alert(json.id);
+        },
+        error: function(jqXHR){     
+		   alert("发生错误：" + jqXHR.status);  
+		  },   
+    });
+  }  
+
+  function submit2(){  
+     // var a=document.getElementById("user2").value;  
+     // alert(a);  
+     $.ajax({
+      type:"POST",
+      url:"php/login.php",
+>>>>>>> origin/master
       async: false,
       data:{
         name:na,
@@ -68,6 +102,7 @@ function submit2(){
         }
       },
       error: function(jqXHR){     
+<<<<<<< HEAD
      alert("发生错误：" + jqXHR.status);  
     },   
   });
@@ -127,3 +162,9 @@ function delCookie(){
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   window.location.reload();
 }
+=======
+		   alert("发生错误：" + jqXHR.status);  
+		},   
+    });
+    } 
+>>>>>>> origin/master
