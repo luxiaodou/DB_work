@@ -12,28 +12,27 @@ require_once 'mysql.php';
  *      "name" : name,
         "addr" : addr,
         "phone" : phone,
-        "pw" : pw;
         "age" : age
         "email" : email,
         "image" : imageurl
  * 输出：
- *      不成功返回为空''
+ *      res:0 成功 1 失败
  */
 $conn = uconnectDb();
-if (!isset ($_POST['data'])) {
-    die('JSON not define!');
-}
+
 $addr = $_POST['addr'];
 $name = $_POST['name'];
 $phone = $_POST['phone'];
-$pw = $_POST['pw'];
 $age = $_POST['age'];
 $email = $_POST['email'];
 $image = $_POST['image'];
 
-$json = $_POST['data'];
-$data = json_decode($json);
-
-$res = mysql_query("update users set user_addr = '$addr', user_phone = '$phone',user_password = '$pw', 
+$res = mysql_query("update users set user_addr = '$addr', user_phone = '$phone', 
                     user_age = '$$age',user_email = '$email',user_image = '$image' where user_name = '$name'",$conn);
-echo $res;
+$out = new stdClass();
+if (mysql_errno()) {
+    $out->res = '1';
+}
+else
+    $out->res = '0';
+echo json_encode($out);
