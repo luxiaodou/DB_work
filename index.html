@@ -135,7 +135,7 @@
  
 </script>
   </head>
-    <body data-spy="scroll" data-target="#myScrollspy">
+    <body data-spy="scroll" data-target="#myScrollspy" onload="checkCookie()">
       <!-- top bar -->
       <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -166,18 +166,27 @@
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#" data-toggle="modal" data-target="#myModal">用户登录</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#merchantModal">商家登录</a></li>
-              <!-- <li><a href="#">联系我们</a></li>
-              <li><a href="#">意见反馈</a></li> -->
+              <li><a href="#" data-toggle="modal" data-target="#myModal" id="loginCus" >用户登录</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#merchantModal" id="loginMer">商家登录</a></li>
+              <li class="dropdown" id="UserDropdown" style="display: none;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="UserName">
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">个人主页</a></li>
+                  <li><a href="#" onclick="delCookie()">退出登录</a></li>
+                </ul>
+              </li>
+              <li><a href="#" ></a></li>
+              <!-- <li><a href="#">意见反馈</a></li> -->
             </ul>
           </div><!-- /.navbar-collapse -->
          </div><!--/.container-fluid -->
       </nav>
 
-            <!-- 用户登录 -->
+      <!-- 用户登录 -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<<<<<<< HEAD
+
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -205,41 +214,12 @@
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-=======
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">x</button>
-                      <h1 class="text-center text-primary">登录</h1>
-                  </div>
-                  <div class="modal-body">
-                      <form action="php/login.php" class="form col-md-12 center-block" method="post">
-                          <input style="display: none" type = "number" value="1" name="type">
-                          <div class="form-group">
-                              <input type="text" class="form-control input-lg" placeholder="用户名" name = "name">
-                          </div>
-                          <div class="form-group">
-                              <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw">
-                          </div>
-                          <div class="form-group">
-                              <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
-                              <span><a href="#" onclick="alert('再注册一个吧')">忘记密码</a></span>
-                              <span><a href="register.html" class="pull-right">注册</a></span>
-                          </div>
-                      </form>
-                  </div>
-                  <div class="modal-footer">
 
-                  </div>
-              </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
->>>>>>> origin/master
       </div><!-- /.modal -->
       <!-- end 用户登录 -->
 
       <!-- 商家登录 -->
       <div class="modal fade" id="merchantModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<<<<<<< HEAD
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -267,35 +247,7 @@
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-=======
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">x</button>
-                      <h1 class="text-center text-primary">登录</h1>
-                  </div>
-                  <div class="modal-body">
-                      <form action="php/login.php" class="form col-md-12 center-block" method="post">
-                          <input style="display: none" type = "number" value="2" name="type">
-                          <div class="form-group">
-                              <input type="text" class="form-control input-lg" placeholder="商户ID" name="name">
-                          </div>
-                          <div class="form-group">
-                              <input type="password" class="form-control input-lg" placeholder="登录密码" name="pw">
-                          </div>
-                          <div class="form-group">
-                              <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
-                              <span><a href="#" onclick="alert('再注册一个吧')">忘记密码</a></span>
-                              <span><a href="#" class="pull-right">注册</a></span>
-                          </div>
-                      </form>
-                  </div>
-                  <div class="modal-footer">
 
-                  </div>
-              </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
->>>>>>> origin/master
       </div><!-- /.modal -->
       <!-- end 商家登录 -->
       <!-- carousel -->

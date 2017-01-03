@@ -20,15 +20,11 @@
 require_once 'mysql.php';
 
 $conn = uconnectDb();
-if (!isset ($_POST['data'])) {
-    die('JSON not define!');
-}
-$json = $_POST['data'];
 
-$data = json_decode($json);
-$name = $data->name;
-$pw = $data->password;
-$type = $data->type;
+
+$name = $_POST['name'];
+$pw = $_POST['password'];
+$type = $_POST['type'];
 if (empty($name)) {
     die('user name is empty!');
 }

@@ -1,13 +1,5 @@
 var usernameNow;
 
-$(document).ready(function(){
-    $("#myNav").affix({
-        offset: { 
-            top: 550
-      }
-    });
-});
-
 function submit1(){ 
     var na=document.getElementById("user1").value;
     var pw=document.getElementById("pass1").value;
@@ -36,8 +28,8 @@ function submit1(){
         }
       },
       error: function(jqXHR){     
-	   alert("发生错误：" + jqXHR.status);  
-	  },   
+     alert("发生错误：" + jqXHR.status);  
+    },   
   });
   }
 }  
