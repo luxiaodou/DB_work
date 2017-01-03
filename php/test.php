@@ -11,7 +11,7 @@ require_once 'mysql.php';
 $conn = uconnectDb();
 
 //$json = "{\"name\":\"luxiaodou\",\"password\":\"luxiaoou\",\"type\":\"1\"}";
-$json = "{\"name\":\"2\",\"password\":\"abc\",\"type\":\"2\"}";
+//$json = "{\"name\":\"2\",\"password\":\"abc\",\"type\":\"2\"}";
 json_encode($json);
 
 $data = json_decode($json);
@@ -34,6 +34,7 @@ if ($type == 1) {
     $result = mysql_query("select * from users where user_name = '$name' and user_password = '$pw'",$conn);
     $arr = mysql_fetch_assoc($result);
     $obj = new stdClass();
+    echo $result;
     if ($name = $arr['user_name'] && $pw = $arr['user_password']) {
         $obj->result = 0;
         $obj->id = $arr['user_name'];
