@@ -2,28 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: luxiaodou
- * Date: 2017/1/2
- * Time: 15:36
+ * Date: 2017/1/3
+ * Time: 23:08
  */
-/**
- * 用户/商家登陆用函数
- * JSON传入名称：data
- * JSON格式：
- *      name: ''
- *      password: ''
- *      type: '1'或'2' 1代表用户，2代表商家
- *
- * 输出格式：
- *      result: ''
- *      id： ''
- */
+
 require_once 'mysql.php';
 
 $conn = uconnectDb();
-if (!isset ($_POST['data'])) {
-    die('JSON not define!');
-}
-$json = $_POST['data'];
+
+//$json = "{\"name\":\"luxiaodou\",\"password\":\"luxiaoou\",\"type\":\"1\"}";
+$json = "{\"name\":\"2\",\"password\":\"abc\",\"type\":\"2\"}";
+json_encode($json);
 
 $data = json_decode($json);
 $name = $data->name;
@@ -49,12 +38,12 @@ if ($type == 1) {
         $obj->result = 0;
         $obj->id = $arr['user_name'];
 //        printf("success1!");
-        echo json_encode($obj);
+        return json_encode($obj);
     } else {
         $obj->result = 1;
         $obj->id = 'ERROR!';
 //        printf("failed1!!");
-        echo json_encode($obj);
+        return json_encode($obj);
     }
 } elseif ($type == 2) {
     $result = mysql_query("select * from shop where shop_id = '$name' and shop_password = '$pw'",$conn);
@@ -65,12 +54,12 @@ if ($type == 1) {
         $obj->result = 0;
         $obj->id = $arr['shop_id'];
 //        printf("success2");
-        echo json_encode($obj);
+        return json_encode($obj);
     } else {
         $obj->result = 1;
         $obj->id = 'ERROR!';
 //        printf('failed2');
-        echo json_encode($obj);
+        return json_encode($obj);
     }
 } else {
     die('表单类型错误！');

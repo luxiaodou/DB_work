@@ -48,16 +48,28 @@ if (empty($type)) {
 $type = intval($type);
 $conn = rconnectDb();
 
+
 if ($pw != $pw2) {
-    printf("两次输入的密码不一致！");
+    echo "<script language=javascript>alert('两次输入的密码不同，请重新输入！');history.go(-1);</script>";
 }
 
 if ($type == 1) {
-    mysql_query("insert into users(user_name,user_email,user_password) VALUES ('$name','$email','$pw')",$conn);
+    $result = mysql_query("select * from users where user_name = '$name'",$conn);
+    $dataCount = mysql_num_rows($result);
+    if ($dataCount) {
+        echo "<script language=javascript>alert('该用户名已经存在！请登陆或尝试其他用户名！');history.go(-1);</script>";
+    }
+
+    $result = mysql_query("insert into users(user_name,user_email,user_password) VALUES ('$name','$email','$pw')",$conn);
     if (!mysql_errno()) {
         print_r("用户注册成功！");
     }
 } elseif ($type == 2) {
+    $result = mysql_query("select * from shop where shop_name = '$name'",$conn);
+    $dataCount = mysql_num_rows($result);
+    if ($dataCount) {
+        echo "<script language=javascript>alert('该用户名已经存在！请登陆或尝试其他用户名！');history.go(-1);</script>";
+    }
     mysql_query("insert into shop(shop_name,shop_email,shop_password) VALUES ('$name','$email','$pw')",$conn);
     if (!mysql_errno()) {
         print_r("商户注册成功！");
