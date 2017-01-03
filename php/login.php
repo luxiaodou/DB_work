@@ -6,6 +6,7 @@
  * Time: 15:36
  */
 /**
+ * 用户/商家登陆用函数
  * JSON传入名称：data
  * JSON格式：
  *      name: ''
@@ -48,12 +49,12 @@ if ($type == 1) {
         $obj->result = 0;
         $obj->id = $arr['user_name'];
 //        printf("success1!");
-        return json_encode($obj);
+        echo json_encode($obj);
     } else {
         $obj->result = 1;
         $obj->id = 'ERROR!';
 //        printf("failed1!!");
-        return json_encode($obj);
+        echo json_encode($obj);
     }
 } elseif ($type == 2) {
     $result = mysql_query("select * from shop where shop_id = '$name' and shop_password = '$pw'",$conn);
@@ -64,12 +65,12 @@ if ($type == 1) {
         $obj->result = 0;
         $obj->id = $arr['shop_id'];
 //        printf("success2");
-        return json_encode($obj);
+        echo json_encode($obj);
     } else {
         $obj->result = 1;
         $obj->id = 'ERROR!';
 //        printf('failed2');
-        return json_encode($obj);
+        echo json_encode($obj);
     }
 } else {
     die('表单类型错误！');
