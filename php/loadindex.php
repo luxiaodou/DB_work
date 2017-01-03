@@ -43,6 +43,7 @@ require_once 'mysql.php';
 $conn = uconnectDb();
 
 $class = $_POST['class'];
+//$class = '5';
 
 if (empty($class)) {
     die('class is empty!');
@@ -51,7 +52,25 @@ if (empty($class)) {
 $class = intval($class);
 
 $result = mysql_query("select * from item where item_class = '$class'");
-$arr = mysql_fetch_assoc($result);
-print_r($arr);
-$obj = new stdClass();
+$dataCount = mysql_num_rows($result);
+$out = new stdClass();
+$out_array = array();
+for ($i = 0; $i < $dataCount; $i++) {
+    $arr = mysql_fetch_assoc($result);
+    print_r($arr);
+    $out_array[$i] = new stdClass();
+    $out_array[$i]->id = $arr['item_id'];
+    $out_array[$i]->name = $arr['item_name'];
+    $out_array[$i]->price = $arr['Item_price'];
+    $out_array[$i]->origin = $arr['Item_origin'];
+    $out_array[$i]->brief = $arr['Item_brief'];
+    $out_array[$i]->shop = $arr['item_shop'];
+    $out_array[$i]->class = $arr['item_class'];
+    $out_array[$i]->image = $arr['item_image'];
+}
+$out->items = $out_array;
+echo json_encode($out);
+
+
+
 

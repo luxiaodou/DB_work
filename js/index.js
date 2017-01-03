@@ -11,7 +11,7 @@ $(document).ready(function(){
 function submit1(){ 
     var na=document.getElementById("user1").value;
     var pw=document.getElementById("pass1").value;
-    if (na.value==null||pw.value==null) {alert("请填写完全");}
+    if (na==null||pw==null) {alert("请填写完全");}
     else{
     // alert(document.getElementById("user1").value); 
     $.ajax({
@@ -45,7 +45,7 @@ function submit1(){
 function submit2(){  
     var na=document.getElementById("user2").value;
     var pw=document.getElementById("pass2").value;
-    if (na.value==null||pw.value==null) {alert("请填写完全");}
+    if (na==null||pw==null) {alert("请填写完全");}
     else{
     // alert(document.getElementById("user1").value); 
     $.ajax({
