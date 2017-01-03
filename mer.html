@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>没有名字</title>
+    <link rel="icon" href="img/demo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/demo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+   
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style >
+
+.carousel{
+  height: 500px;
+  background-color: #000;
+}
+.col-xs-8{
+  padding-left:0px;
+}
+.center{
+  text-align: center;
+}
+
+.navbar-change{
+  border-radius: 0px;
+  margin-bottom: 0px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mynavbartext{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #9d9d9d;
+}
+
+#merImg{
+  width: 55%;
+  height: 30%;
+  display: inline-block;
+  float: left;
+  margin-right:40px;
+}
+
+
+#price{
+  width: 35%;
+  height: 40%;
+  display: inline-block;
+}
+
+#priceInfo{
+
+  padding-top:20px;
+}
+
+
+.money-highlight{
+  color:#f76120;
+  font-size:30px;
+}
+
+
+.money{
+  text-decoration: line-through;
+}
+
+.wrapper{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 50px;
+}
+
+.purInfo{
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid #BEBEBE;
+  border-top: 1px solid #BEBEBE;
+}
+
+.purInfo div{
+  display: inline-block;
+  text-align: center;
+  padding-top: 10px;
+  width:32%;
+  height: 50px;
+  color: #BEBEBE;
+  font-size: 20px;
+  
+}
+
+.addborder{
+  border-right: 1px solid #BEBEBE;
+}
+
+#pay{
+  padding-top: 20px;
+}
+
+#payBtn{
+  padding-top: 20px;
+  margin-left: 50px;
+
+}
+
+#greatBtn{
+  width: 180px;
+  height: 60px;
+  background-color: #00C5CD;
+  border: 0;
+  border-radius: 5px;
+}
+
+#greatBtn:hover{
+  background-color:#00E5EE;
+}
+
+.midinput{
+  width: 40px;
+}
+
+#plus{
+  margin-left:50px;
+}
+
+#midcontent{
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.comment{
+  border-top:3px solid #668B8B;
+}
+
+</style>
+<script>
+
+</script>
+  </head>
+    <body data-spy="scroll" data-target="#myScrollspy">
+      <!-- top bar -->
+      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">没有名字</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">首页</a></li>
+              <li><a href="#">美食</a></li>
+              <li><a href="#">酒店</a></li>
+              <li><a href="#">电影</a></li>
+              <li><a href="#">KTV</a></li>
+              <li><a href="#">生活服务</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="找点新鲜玩意...">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" data-toggle="modal" data-target="#myModal">用户登录</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#merchantModal">商家登录</a></li>
+              <!-- <li><a href="#">联系我们</a></li>
+              <li><a href="#">意见反馈</a></li> -->
+            </ul>
+          </div><!-- /.navbar-collapse -->
+         </div><!--/.container-fluid -->
+      </nav>
+      <!-- end top bar -->
+      <!-- 用户登录 -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">x</button>
+              <h1 class="text-center text-primary">登录</h1>
+            </div>
+            <div class="modal-body">
+              <form action="" class="form col-md-12 center-block">
+                <div class="form-group">
+                  <input type="text" class="form-control input-lg" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control input-lg" placeholder="登录密码">
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
+                  <span><a href="#" onclick="alert('再注册一个吧')">忘记密码</a></span>
+                  <span><a href="register.html" class="pull-right">注册</a></span>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <!-- end 用户登录 -->
+      
+      <!-- 商家登录 -->
+      <div class="modal fade" id="merchantModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">x</button>
+              <h1 class="text-center text-primary">登录</h1>
+            </div>
+            <div class="modal-body">
+              <form action="" class="form col-md-12 center-block">
+                <div class="form-group">
+                  <input type="text" class="form-control input-lg" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control input-lg" placeholder="登录密码">
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary btn-lg btn-block">立刻登录</button>
+                  <span><a href="#" onclick="alert('再注册一个吧')">忘记密码</a></span>
+                  <span><a href="#" class="pull-right">注册</a></span>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <!-- end 商家登录 -->
+      <div class="container">
+      <!-- 商品界面 -->
+      <div class="wrapper">
+        <div id="merName"><h1>【2店通用】重庆冉园老灶火锅</h1></div>
+        <div id="merInfo"><h3>仅售78元！价值100元的代金券1张，全场通用，可叠加使用，提供免费WiFi。</h3></div>
+        <div id="merImg"><img src="http://p0.meituan.net/deal/c629fb51d89f146ab1222a4e766bfc76243768.jpg@460w_280h_1e_1c" style="width: 100%; height: 100%;"></div>
+        <div id="payDiv">
+          <div id="price">
+            <div id="priceInfo">
+              <h4 style="display: inline-block;">团购价：</h4>
+              <span class="money-highlight" style="display: inline-block;">¥78</span>
+              <h5 style="display: inline-block;">门店价：</h5>
+              <span class="money" style="display: inline-block;">¥100</span>
+              <div class="purInfo">
+                <div class="addborder">已售</div>
+                <div class="addborder">分</div>
+                <div>评价</div>
+              </div>
+            </div>
+            <div id="pay">
+              <h4>数量：</h4>
+              <div id="plus" class="btn-group">
+                <button class="btn btn-default" type="button" onclick="subNum()">-</button>
+                <input class="btn btn-default midinput" value=1 id="num">
+                <button class="btn btn-default" type="button" onclick="addNum()">+</button>
+              </div>
+              <div id="payBtn">
+                <button id="greatBtn"><span class="glyphicon glyphicon-ok" style="display: inline-block; color: white;"></span><div id="midcontent">立即抢购</div></button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- end 商品界面 -->
+
+      <!-- 用户评论 -->
+      <div class="comment wrapper">
+        <h1>消费评价</h1>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">用户评价</a></li>
+          <li><a href="#">发表评价</a></li>
+        </ul>
+      </div>
+      <!-- end 用户评论 -->
+      
+      
+      </div>
+
+      <nav class="navbar navbar-default navbar-inverse navbar-change" role="navigation" style="padding:0px;">
+        <p class="mynavbartext">联系我们：QQ123456789</p>
+      </nav>
+      <script type="text/javascript">
+
+        function subNum(){
+          if(parseInt(document.getElementById("num").value)>0){
+            document.getElementById("num").value=parseInt(document.getElementById("num").value)-1;
+          }
+        }
+        function addNum(){
+          document.getElementById("num").value=parseInt(document.getElementById("num").value)+1;
+        }
+        
+        // 要传json内容：用户名，商品名，商品描述，商品价格，商品原价，评论星级，评论内容
+      </script>
+</body>
+
+</html>
