@@ -19,6 +19,7 @@
  *      class:
  *      image:
  *      star:
+ *      rest:
  */
 
 require_once 'mysql.php';
@@ -26,7 +27,7 @@ require_once 'mysql.php';
 $conn = uconnectDb();
 
 $id = $_POST['id'];
-
+//$id = 1;
 if (empty($id)) {
     die('class is empty!');
 }
@@ -44,4 +45,5 @@ $out->class = $arr['item_class'];
 $out->shop = $arr['item_shop'];
 $out->image = $arr['item_image'];
 $out->star = $arr['item_stars'];
+$out->rest = $arr['item_rest'];
 echo json_encode($out);
