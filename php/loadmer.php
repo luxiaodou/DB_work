@@ -25,8 +25,7 @@ require_once 'mysql.php';
 
 $conn = uconnectDb();
 
-//$id = $_POST['id'];
-$id = '5';
+$id = $_POST['id'];
 
 if (empty($id)) {
     die('class is empty!');

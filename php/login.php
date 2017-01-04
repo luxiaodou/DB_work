@@ -37,7 +37,7 @@ if (empty($type)) {
 $type = intval($type);
 
 if ($type == 1) {
-    $result = mysql_query("select * from users where user_name = '$name' and user_password = '$pw'",$conn);
+    $result = mysql_query("select * from users where user_email = '$name' and user_password = '$pw'",$conn);
     $arr = mysql_fetch_assoc($result);
     $obj = new stdClass();
     if ($name = $arr['user_name'] && $pw = $arr['user_password']) {
@@ -52,7 +52,7 @@ if ($type == 1) {
         echo json_encode($obj);
     }
 } elseif ($type == 2) {
-    $result = mysql_query("select * from shop where shop_id = '$name' and shop_password = '$pw'",$conn);
+    $result = mysql_query("select * from shop where shop_email = '$name' and shop_password = '$pw'",$conn);
     $arr = mysql_fetch_assoc($result);
     $obj = new stdClass();
 //    print_r($arr);

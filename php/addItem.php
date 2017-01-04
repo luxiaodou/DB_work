@@ -6,13 +6,14 @@
  * Time: 20:57
  */
 /**
- * 删除商品的函数
+ * 添加商品的函数
  * 输入格式：
  *      shopid:
  *      name:
  *      price:
  *      origin:
  *      brief:
+ *      rest:
  *      shop:
  *      class:
  *      image:
@@ -34,9 +35,10 @@ $brief = $_POST['brief'];
 $shop = $_POST['shop'];
 $class = $_POST['class'];
 $image = $_POST['image'];
+$rest = $_POST['rest'];
 
-$res = mysql_query("INSERT INTO `item` (`item_id`, `item_name`, `item_price`, `item_origin`, `item_brief`, `item_shop`, `item_class`, `item_image`, `item_stars`) 
-                    VALUES (NULL, '$name', '$price', '$origin', '$brief', '$shop', '$class', '$image', '')",$conn);
+$res = mysql_query("INSERT INTO `item` (`item_id`, `item_name`, `item_price`, `item_origin`, `item_brief`, `item_shop`, `item_class`, `item_image`, `item_stars`, `item_brief`) 
+                    VALUES (NULL, '$name', '$price', '$origin', '$brief', '$shop', '$class', '$image', '','$rest')",$conn);
 
 $out =new stdClass();
 if (mysql_errno()) {
