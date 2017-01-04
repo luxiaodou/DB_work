@@ -46,7 +46,7 @@ function submit1(){
 function submit2(){  
     var na=document.getElementById("user2").value;
     var pw=document.getElementById("pass2").value;
-    if (na.value==null||pw.value==null) {alert("请填写完全");}
+    if (na==null||pw==null) {alert("请填写完全");}
     else{
     // alert(document.getElementById("user1").value); 
     $.ajax({
@@ -63,7 +63,7 @@ function submit2(){
         // alert("success");
         var json=eval('('+data+')');
         if(json.result==0){
-          
+          window.location.href="merChant.html?id="+json.id;
         }else{
           alert("用户名密码错误！");
         }
@@ -131,8 +131,8 @@ function delCookie(){
 
 function loadmer(){
   checkCookie();
-
   strs=window.location.href.split("="); //字符分割 
+  // TODO
   // alert(strs[1]);
   $.ajax({
       type:"POST",
@@ -150,11 +150,11 @@ function loadmer(){
           var d=document.getElementById("merInfo").childNodes[0];
           var hm=document.getElementById("hm");
           var m=document.getElementById("m");
-          img.src=items[o].image;
-          h.innerHTML=items[o].name;
-          d.innerHTML=items[o].brief;
-          hm.innerHTML="¥"+items[o].price;
-          m.innerHTML="¥"+items[o].origin;
+          img.src=json.image;
+          h.innerHTML=json.name;
+          d.innerHTML=json.brief;
+          hm.innerHTML="¥"+json.price;
+          m.innerHTML="¥"+json.origin;
 
         },
         error: function(jqXHR){     

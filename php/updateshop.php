@@ -17,7 +17,7 @@ require_once 'mysql.php';
  * 输出：
  *      res:0 成功 1 失败
  */
-$conn = sconnectDb();
+$conn = uconnectDb();
 
 $id = $_POST['id'];
 $name = $_POST['name'];

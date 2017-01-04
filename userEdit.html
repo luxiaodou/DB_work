@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>乐购</title>
+    <link rel="icon" href="img/demo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/demo.png" type="image/x-icon">
+   
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="js/userEdit.js"></script>
+<style >
+body{
+  padding:70px 0px 0px 0px;
+}
+.navbar-change{
+  border-radius: 0px;
+  margin-bottom: 0px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mynavbartext{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #9d9d9d;
+}
+
+.wrapper{
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+}
+
+.merForm{
+  margin-top: 30px;
+}
+
+.input-group{
+  margin-top: 20px;
+}
+
+</style>
+<script>
+
+</script>
+  </head>
+    <body data-spy="scroll" data-target="#myScrollspy" onload="load()">
+       <!-- top bar -->
+      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">乐购</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li ><a href="index.html">首页</a></li>
+              <li><a href="#">美食</a></li>
+              <li><a href="#">酒店</a></li>
+              <li><a href="#">电影</a></li>
+              <li><a href="#">KTV</a></li>
+              <li><a href="#">生活服务</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="找点新鲜玩意...">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown" id="UserDropdown" style="display: none;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="UserName">
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="user.html">个人主页</a></li>
+                  <li><a href="#" onclick="delCookie()">退出登录</a></li>
+                </ul>
+              </li>
+              <!-- <li><a href="#">联系我们</a></li>
+              <li><a href="#">意见反馈</a></li> -->
+            </ul>
+          </div><!-- /.navbar-collapse -->
+         </div><!--/.container-fluid -->
+      </nav>
+      <!-- end top bar -->
+      
+      <!-- 商品列表 -->
+      <div class=" wrapper ">
+        <div class="">
+          <h1>  
+            编辑个人信息
+          </h1>
+          <form class="merForm" role="form">
+              <br>
+              <div class="input-group">
+                  <span class="input-group-addon">年龄</span>
+                  <input type="text" class="form-control" placeholder="" id="mN">
+              </div>
+              <br>
+              <div class="input-group">
+                  <span class="input-group-addon">邮箱</span>
+                  <input type="text" class="form-control" placeholder="" id="mE">
+              </div>
+              <br>
+              <div class="input-group">
+                  <span class="input-group-addon">电话</span>
+                  <input type="text" class="form-control" placeholder="" id="mP">
+              </div>
+              <br>
+              <div class="input-group">
+                  <span class="input-group-addon">地址</span>
+                  <input type="text" class="form-control" placeholder="" id="mA">
+              </div>
+              <br>
+              <div class="input-group">
+                  <span class="input-group-addon">头像</span>
+                  <input type="text" class="form-control" placeholder="" id="mI">
+              </div>
+              <br>
+              <input type="button" name="submit" onclick="submit1()" class="btn btn-default" value="确认提交">
+          </form>
+        </div>
+      </div>
+      <!-- end 商品列表 -->
+
+      <nav class="navbar navbar-default navbar-inverse navbar-change" style="margin-top: 552px" role="navigation">
+        <p class="mynavbartext">联系我们：QQ123456789</p>
+      </nav>
+      <script type="text/javascript">
+        
+      </script>
+    </body>
+</html>

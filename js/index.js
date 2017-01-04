@@ -9,11 +9,13 @@ $(document).ready(function(){
 });
 
 function submit1(){ 
+    // alert("f");
     var na=document.getElementById("user1").value;
     var pw=document.getElementById("pass1").value;
     if (na==""||pw=="") {alert("请填写完全");}
     else{
     // alert(document.getElementById("user1").value); 
+
     $.ajax({
       type:"POST",
       url:"php/login.php",
@@ -25,7 +27,7 @@ function submit1(){
         type:1
       },
       success: function(data){
-        // alert("success");
+        alert("success");
         var json=eval('('+data+')');
         if(json.result==0){
           setCookie("username",json.id);
@@ -119,7 +121,7 @@ function logined(){
   logincus.style="display:none;";
   loginMer.style.display="none";
   user.style.display="block";
-  user.value=usernameNow;
+  user.innerHTML=usernameNow;
   userdrop.style.display="block";
 }
 
@@ -149,18 +151,18 @@ function loadlo(){
         // alert("success");
         var json=eval('('+items+')');
         var j=1;
-        for(var o=0;o<items.length;o++){
+        for(var o=0;o<json.length;o++){
           var img=document.getElementById("class"+i+"-"+j+"-img");
           var h=document.getElementById("class"+i+"-"+j+"-h");
           var d=document.getElementById("class"+i+"-"+j+"-d");
           var hm=document.getElementById("class"+i+"-"+j+"-hm");
           var m=document.getElementById("class"+i+"-"+j+"-m");
-          img.parentNode.parentNode.id=items[o].id;
-          img.src=items[o].image;
-          h.value=items[o].name;
-          d.value=items[o].brief;
-          hm.value=items[o].price;
-          m.value=items[o].origin;
+          img.parentNode.parentNode.id=json[o].id;
+          img.src=json[o].image;
+          h.value=json[o].name;
+          d.value=json[o].brief;
+          hm.value=json[o].price;
+          m.value=json[o].origin;
           j++;
           if(i==2||j==2)break;
           if(j==6)break;

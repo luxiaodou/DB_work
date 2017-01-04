@@ -57,13 +57,13 @@ $out = new stdClass();
 $out_array = array();
 for ($i = 0; $i < $dataCount; $i++) {
     $arr = mysql_fetch_assoc($result);
-//    print_r($arr);
+    print_r($arr);
     $out_array[$i] = new stdClass();
     $out_array[$i]->id = $arr['item_id'];
     $out_array[$i]->name = $arr['item_name'];
-    $out_array[$i]->price = $arr['item_price'];
-    $out_array[$i]->origin = $arr['item_origin'];
-    $out_array[$i]->brief = $arr['item_brief'];
+    $out_array[$i]->price = $arr['Item_price'];
+    $out_array[$i]->origin = $arr['Item_origin'];
+    $out_array[$i]->brief = $arr['Item_brief'];
     $out_array[$i]->shop = $arr['item_shop'];
     $out_array[$i]->class = $arr['item_class'];
     $out_array[$i]->image = $arr['item_image'];
