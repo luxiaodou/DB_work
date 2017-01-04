@@ -1,7 +1,7 @@
 var usernameNow;
 var strs= new Array(); //定义一数组 
 function subNum(){
-  if(parseInt(document.getElementById("num").value)>0){
+  if(parseInt(document.getElementById("num").value)>1){
     document.getElementById("num").value=parseInt(document.getElementById("num").value)-1;
   }
 }
@@ -189,3 +189,4 @@ function addComment(){
        
     });
 }
+// TODO:商品评论

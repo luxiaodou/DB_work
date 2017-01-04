@@ -62,7 +62,7 @@ function submit2(){
         // alert("success");
         var json=eval('('+data+')');
         if(json.result==0){
-          
+          window.location.href="merChant.html?id="+json.id;
         }else{
           alert("用户名密码错误！");
         }

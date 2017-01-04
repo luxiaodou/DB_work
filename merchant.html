@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>没有名字</title>
+    <title>乐购</title>
     <link rel="icon" href="img/demo.png" type="image/x-icon">
     <link rel="shortcut icon" href="img/demo.png" type="image/x-icon">
    
@@ -17,7 +17,7 @@
     
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/merchant.js"></script>
 <style >
 body{
   padding:70px 0px 0px 0px;
@@ -36,9 +36,27 @@ body{
 }
 
 .wrapper{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 30%;
+  margin-right: 30%;
   
+}
+
+.list-group-item{
+  margin-top: 30px;
+  display: inline-block;
+  width: 80%;
+}
+
+.hold{
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 2px groove #C9C9C9;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.editDiv{
+  display: inline-block;
 }
 
 </style>
@@ -46,7 +64,7 @@ body{
 
 </script>
   </head>
-    <body data-spy="scroll" data-target="#myScrollspy" >
+    <body data-spy="scroll" data-target="#myScrollspy" onload="loadMerchant()">
       <!-- top bar -->
       <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -58,12 +76,12 @@ body{
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">没有名字</a>
+            <a class="navbar-brand" href="#">乐购</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html">首页</a></li>
+              <li ><a href="index.html">首页</a></li>
               <li><a href="#">美食</a></li>
               <li><a href="#">酒店</a></li>
               <li><a href="#">电影</a></li>
@@ -87,14 +105,18 @@ body{
       <!-- end top bar -->
       
       <!-- 商品列表 -->
-      <div class="container wrapper ">
-        <ul class="list-group">
-            <li class="list-group-item">商品一</li>
-            <li class="list-group-item">商品二</li>
-            <li class="list-group-item">商品三</li>
-            <li class="list-group-item">商品四</li>
-            <li class="list-group-item">商品五</li>
-        </ul>
+      <div class="hold" id="merList">
+      <h2>商家信息界面</h2><button id="subEdit" class="btn btn-default" value="编辑信息" onclick="Edit()">编辑信息</button>
+      <button id="addEdit" class="btn btn-default" value="添加商品" onclick="addMer()">添加商品</button>
+        <div class="wrapper">
+          <ul class="list-group">
+              <label>名称：</label><li class="list-group-item" id="list_N">903030303</li>
+              <label>邮箱：</label><li class="list-group-item" id="list_E">903030303</li>
+              <label>电话：</label><li class="list-group-item" id="list_P">903030303</li>
+              <label>地址：</label><li class="list-group-item" id="list_A">903030303</li>
+              <div><div class="editDiv"><a class="glyphicon glyphicon-remove" onclick="deleteitem(this.id)" id="del1"></a><a class="glyphicon glyphicon-pencil" onclick="edititem(this.id)" id="edit1"></a></div><li class="list-group-item" id="mer1Name">商品一</li></div>
+          </ul>
+        </div>
       </div>
       <!-- end 商品列表 -->
 

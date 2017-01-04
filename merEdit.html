@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>没有名字</title>
+    <title>乐购</title>
     <link rel="icon" href="img/demo.png" type="image/x-icon">
     <link rel="shortcut icon" href="img/demo.png" type="image/x-icon">
    
@@ -17,7 +17,7 @@
     
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/merEdit.js"></script>
 <style >
 body{
   padding:70px 0px 0px 0px;
@@ -36,9 +36,17 @@ body{
 }
 
 .wrapper{
-  margin-left: 10%;
-  margin-right: 10%;
-  
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+}
+
+.merForm{
+  margin-top: 30px;
+}
+
+.input-group{
+  margin-top: 20px;
 }
 
 </style>
@@ -46,7 +54,7 @@ body{
 
 </script>
   </head>
-    <body data-spy="scroll" data-target="#myScrollspy" >
+    <body data-spy="scroll" data-target="#myScrollspy" onload="loadMerEdit()">
       <!-- top bar -->
       <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -58,12 +66,12 @@ body{
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">没有名字</a>
+            <a class="navbar-brand" href="#">乐购</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html">首页</a></li>
+              <li class=""><a href="index.html">首页</a></li>
               <li><a href="#">美食</a></li>
               <li><a href="#">酒店</a></li>
               <li><a href="#">电影</a></li>
@@ -87,38 +95,38 @@ body{
       <!-- end top bar -->
       
       <!-- 商品列表 -->
-      <div class="container wrapper ">
-        <div style="padding: 100px 100px 10px;">
-          <h1>
-          
+      <div class=" wrapper ">
+        <div class="">
+          <h1>  
+            编辑商品信息
           </h1>
-          <form class="bs-example bs-example-form" role="form">
+          <form class="merForm" role="form">
               <div class="input-group">
                   <span class="input-group-addon">商品名称</span>
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" class="form-control" placeholder="" id="merName">
               </div>
               <br>
               <div class="input-group">
                   <span class="input-group-addon">商品描述</span>
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" class="form-control" placeholder="" id="merD">
               </div>
               <br>
               <div class="input-group">
                   <span class="input-group-addon">商品原价</span>
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" class="form-control" placeholder="" id="merM">
               </div>
               <br>
               <div class="input-group">
                   <span class="input-group-addon">商品价格</span>
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" class="form-control" placeholder="" id="merHm">
               </div>
               <br>
               <div class="input-group">
                   <span class="input-group-addon">商品图片</span>
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" class="form-control" placeholder="" id="merImg">
               </div>
               <br>
-              <input type="button" name="submit" onclick="submit()" class="btn btn-default" value="">
+              <input type="button" name="submit" onclick="submit()" class="btn btn-default" value="确认提交">
           </form>
         </div>
       </div>
