@@ -47,7 +47,7 @@ $conn = uconnectDb();
 $classid = $_POST['classid'];
 $keyword = $_POST['keyword'];
 //$classid = -1;
-//$keyword = 'ktv';
+//$keyword = '';
 //$keyword = '宾馆';
 //$keyword = '没东西';
 if ($classid == -1) {

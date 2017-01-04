@@ -40,7 +40,7 @@ if ($type == 1) {
     $result = mysql_query("select * from users where user_email = '$name' and user_password = '$pw'",$conn);
     $arr = mysql_fetch_assoc($result);
     $obj = new stdClass();
-    if ($name = $arr['user_name'] && $pw = $arr['user_password']) {
+    if ($name == $arr['user_name'] && $pw == $arr['user_password']) {
         $obj->result = 0;
         $obj->id = $arr['user_name'];
 //        printf("success1!");
@@ -56,7 +56,7 @@ if ($type == 1) {
     $arr = mysql_fetch_assoc($result);
     $obj = new stdClass();
 //    print_r($arr);
-    if ($name = $arr['shop_id'] && $pw = $arr['shop_password']) {
+    if ($name == $arr['shop_id'] && $pw == $arr['shop_password']) {
         $obj->result = 0;
         $obj->id = $arr['shop_id'];
 //        printf("success2");
