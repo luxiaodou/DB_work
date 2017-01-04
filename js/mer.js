@@ -9,6 +9,11 @@ function addNum(){
   document.getElementById("num").value=parseInt(document.getElementById("num").value)+1;
 }
 
+function jumpSearch(){
+  var id=document.getElementById("searchInput");
+  window.location.href="result.html?class=-1&keyword="+id.value;
+}
+
 function submit1(){ 
     var na=document.getElementById("user1").value;
     var pw=document.getElementById("pass1").value;

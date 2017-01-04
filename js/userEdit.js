@@ -31,6 +31,12 @@ function checkCookie()
   }
 }
 
+function jumpSearch(){
+  var id=document.getElementById("searchInput");
+  alert(id.value);
+  window.location.href="result.html?class=-1&keyword="+id.value;
+}
+
 function logined(){
   // alert("in logined");
   var user=document.getElementById("UserName");

@@ -18,7 +18,7 @@
     
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="js/paylist.js"></script>
+    <script src="js/result.js"></script>
 <style type="text/css">
 body{
   padding: 50px 0px 0px 0px;
@@ -65,7 +65,7 @@ body{
 .noItem{
   padding-top: 50px;
   text-align: center；
-  width:100%;
+  width:500px;
 }
 
 .itemList{
@@ -89,58 +89,62 @@ body{
   font-size: 20px;
 }
 
-
+.addPrice{
+  margin-left: 20px;
+  color:#f76120;
+  padding-top: 5px;
+}
 
 </style>
   </head>
   <body data-spy="scroll" data-target="#myScrollspy" onload="load()">
     <!-- top bar -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">乐购</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="#">美食</a></li>
-            <li><a href="#">酒店</a></li>
-            <li><a href="#">电影</a></li>
-            <li><a href="#">KTV</a></li>
-            <li><a href="#">生活服务</a></li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="找点新鲜玩意...">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="modal" data-target="#myModal" id="loginCus" >用户登录</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#merchantModal" id="loginMer">商家登录</a></li>
-            <li class="dropdown" id="UserDropdown" style="display: none;">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="UserName">
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="user.html">个人主页</a></li>
-                <li><a href="#" onclick="delCookie()">退出登录</a></li>
-              </ul>
-            </li>
-            <li><a href="#" ></a></li>
-            <!-- <li><a href="#">意见反馈</a></li> -->
-          </ul>
-        </div><!-- /.navbar-collapse -->
-       </div><!--/.container-fluid -->
-    </nav>
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">乐购</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">首页</a></li>
+              <li id="page1"><a href="result.html?class=1&keyword=f">美食</a></li>
+              <li id="page2"><a href="result.html?class=2&keyword=f">酒店</a></li>
+              <li id="page3"><a href="result.html?class=3&keyword=f">电影</a></li>
+              <li id="page4"><a href="result.html?class=4&keyword=f">KTV</a></li>
+              <li id="page5"><a href="result.html?class=5&keyword=f">生活服务</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="找点新鲜玩意..." id="searchInput">
+              </div>
+              <button type="submit" class="btn btn-default" onclick="jumpSearch()">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" data-toggle="modal" data-target="#myModal" id="loginCus" >用户登录</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#merchantModal" id="loginMer">商家登录</a></li>
+              <li class="dropdown" id="UserDropdown" style="display: none;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="UserName">
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="user.html">个人主页</a></li>
+                  <li><a href="#" onclick="delCookie()">退出登录</a></li>
+                </ul>
+              </li>
+              <li><a href="#" ></a></li>
+              <!-- <li><a href="#">意见反馈</a></li> -->
+            </ul>
+          </div><!-- /.navbar-collapse -->
+         </div><!--/.container-fluid -->
+      </nav>
 
     <!-- 用户登录 -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -210,14 +214,15 @@ body{
     <!-- end 商家登录 -->
     <div class="container">
       <div class="list-sytle wrapper" id="ListWrapper">
-        <div class="Nothing"><span class="glyphicon glyphicon-shopping-cart cartSize"></span>我的购买清单</div>
-        <div id="noItem" class="noItem" style="display: none;"><h1>呀！您的购物清单还是空的</h1><h3 style="padding-top: 20px">去<a href="index.html">首页</a>团购喜欢的产品</h3></div>
-        <div class="itemList"><img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp">
-          <div>【8店通用】芦月轩羊蝎子</div>
-          <div>
-            
+        <div id="noItem" class="noItem" style="display: none;"><h1>呀！什么也没搜到！</h1><h3 style="padding-top: 20px">换个词试试？</h3></div>
+        <!-- <div class="itemList">
+          <div id="click0" onclick="getin(this.id)">
+            <img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp">
+            <div>【8店通用】芦月轩羊蝎子</div>
           </div>
-        </div>
+          <div style="padding-left: 20%;">单价</div>
+          <div class="addPrice">¥69.9</div>
+        </div> -->
       </div>
     
     </div>

@@ -1,4 +1,11 @@
 var strs=new Array();
+function jumpSearch(){
+  var id=document.getElementById("searchInput");
+  alert(id.value);
+  window.location.href="result.html?class=-1&keyword="+id.value;
+}
+
+
 function load(){
 	strs=window.location.href.split("=");
 	$.ajax({

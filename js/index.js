@@ -27,7 +27,7 @@ function submit1(){
         type:1
       },
       success: function(data){
-        alert("success");
+        // alert("success");
         var json=eval('('+data+')');
         if(json.result==0){
           setCookie("username",json.id);
@@ -183,4 +183,10 @@ function loadlo(){
 
 function jump(thisid){
   window.location.href="mer.html?id="+thisid;
+}
+
+function jumpSearch(){
+  var id=document.getElementById("searchInput");
+  alert(id.value);
+  window.location.href="result.html?class=-1&keyword="+id.value;
 }

@@ -153,17 +153,17 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="active"><a href="index.html">首页</a></li>
-              <li><a href="#">美食</a></li>
-              <li><a href="#">酒店</a></li>
-              <li><a href="#">电影</a></li>
-              <li><a href="#">KTV</a></li>
-              <li><a href="#">生活服务</a></li>
+              <li><a href="result.html?class=1&keyword=f">美食</a></li>
+              <li><a href="result.html?class=2&keyword=f">酒店</a></li>
+              <li><a href="result.html?class=3&keyword=f">电影</a></li>
+              <li><a href="result.html?class=4&keyword=f">KTV</a></li>
+              <li><a href="result.html?class=5&keyword=f">生活服务</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="找点新鲜玩意...">
+                <input type="text" class="form-control" placeholder="找点新鲜玩意..." id="searchInput">
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" onclick="jumpSearch()">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#" data-toggle="modal" data-target="#myModal" id="loginCus" >用户登录</a></li>
@@ -305,7 +305,7 @@
               </div>
               <div class="col-xs-8">
                 <div>
-                  <h2 id="section-1" >美食<a class="more" >>>更多</a></h2>
+                  <h2 id="section-1" >美食<a class="more" href="result.html?class=1&keyword=f">>>更多</a></h2>
                   <div class="content-wrap" >
                     <div class="content" id="food1" onclick="jump(this.id)">
                       <a href="#">
@@ -382,7 +382,7 @@
                   </div>
                 </div>
                 <div>
-                <h2 id="section-2">酒店<a class="more" >>>更多</a></h2>
+                <h2 id="section-2">酒店<a class="more"  href="result.html?class=2&keyword=f">>>更多</a></h2>
                 <div class="content-wrap">
                   <div class="content" id="hotel1" onclick="jump(this.id)">
                     <a href="#">
@@ -459,7 +459,7 @@
                 </div>
                 </div>
                 <div>
-                <h2 id="section-3">电影<a class="more" >>>更多</a></h2>
+                <h2 id="section-3">电影<a class="more"  href="result.html?class=3&keyword=f">>>更多</a></h2>
                 <div class="content-wrap cinema-wrap">
                   <div class="content" id="movie1" onclick="jump(this.id)">
                     <a href="#">
@@ -490,7 +490,7 @@
                 </div>
                 </div>
                 <div>
-                <h2 id="section-4">KTV<a class="more" >>>更多</a></h2>
+                <h2 id="section-4">KTV<a class="more"  href="result.html?class=4&keyword=f">>>更多</a></h2>
                 <div class="content-wrap">
                   <div class="content" id="KTV1" onclick="jump(this.id)">
                     <a href="#">
@@ -567,7 +567,7 @@
                 </div>
                 </div>
                 <div>
-                <h2 id="section-5">生活服务<a class="more" >>>更多</a></h2>
+                <h2 id="section-5">生活服务<a class="more"  href="result.html?class=5&keyword=f">>>更多</a></h2>
                 <div class="content-wrap">
                   <div class="content" id="life1" onclick="jump(this.id)">
                     <a href="#">

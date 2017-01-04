@@ -8,6 +8,11 @@ function addNum(id){
   document.getElementById(id).value=parseInt(document.getElementById(id).value)+1;
 }
 
+function jumpSearch(){
+  var id=document.getElementById("searchInput");
+  alert(id.value);
+  window.location.href="result.html?class=-1&keyword="+id.value;
+}
 
 function submit1(){ 
     // alert("f");

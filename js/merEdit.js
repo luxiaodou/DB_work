@@ -1,4 +1,10 @@
 var idlist= new Array();
+function jumpSearch(){
+  var id=document.getElementById("searchInput");
+  alert(id.value);
+  window.location.href="result.html?class=-1&keyword="+id.value;
+}
+
 function loadMerEdit(){
 	idlist=window.location.href.split("=");
 	var list=new Array();
