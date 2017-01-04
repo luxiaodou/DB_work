@@ -14,13 +14,14 @@ function jumpSearch(){
   window.location.href="result.html?class=-1&keyword="+id.value;
 }
 
-function submit1(){ 
-    // alert("f");
-    var na=document.getElementById("user1").value;
-    var pw=document.getElementById("pass1").value;
-    if (na==""||pw=="") {alert("请填写完全");}
-    else{
-    // alert(document.getElementById("user1").value); 
+
+function submit1(){
+  // alert("f");
+  var na=document.getElementById("user1").value;
+  var pw=document.getElementById("pass1").value;
+  if (na==""||pw=="") {alert("请填写完全");}
+  else{
+    // alert(document.getElementById("user1").value);
 
     $.ajax({
       type:"POST",
@@ -33,29 +34,31 @@ function submit1(){
         type:1
       },
       success: function(data){
-        alert("success");
-        var json=eval('('+data+')');
-        if(json.result==0){
-          setCookie("username",json.id);
-          usernameNow=json.id;
+        // alert("success");
+        var json1=eval('('+data+')');
+        if(json1.result==0){
+          setCookie("username",json1.id);
+          usernameNow=json1.id;
           logined();
         }else{
           alert("用户名或密码错误！");
         }
       },
-      error: function(jqXHR){     
-	   alert("发生错误：" + jqXHR.status);  
-	  },   
-  });
+      error: function(jqXHR){
+        alert("发生错误：" + jqXHR.status);
+      },
+    });
   }
-}  
+}
 
-function submit2(){  
-    var na=document.getElementById("user2").value;
-    var pw=document.getElementById("pass2").value;
-    if (na==""||pw=="") {alert("请填写完全");}
-    else{
-    // alert(document.getElementById("user1").value); 
+function submit2(){
+
+  var na=document.getElementById("user2").value;
+  var pw=document.getElementById("pass2").value;
+  // alert("ff");
+  if (na==""||pw=="") {alert("请填写完全");}
+  else{
+    // alert(document.getElementById("user1").value);
     $.ajax({
       type:"POST",
       url:"php/login.php",
@@ -67,34 +70,36 @@ function submit2(){
         type:2
       },
       success: function(data){
-        // alert("success");
-        var json=eval('('+data+')');
-        if(json.result==0){
-          window.location.href="merChant.html?id="+json.id;
+
+        var json1=eval('('+data+')');
+
+        if(json1.result==0){
+          // alert("success");
+          setCookie('mername',json1.id);
         }else{
           alert("用户名密码错误！");
         }
       },
-      error: function(jqXHR){     
-     alert("发生错误：" + jqXHR.status);  
-    },   
-  });
+      error: function(jqXHR){
+        alert("发生错误：" + jqXHR.status);
+      },
+    });
   }
-}  
+}
 
 function getCookie(c_name)
 {
   if (document.cookie.length>0)
-    {
+  {
     c_start=document.cookie.indexOf(c_name + "=")
     if (c_start!=-1)
-      { 
-      c_start=c_start + c_name.length+1 
+    {
+      c_start=c_start + c_name.length+1
       c_end=document.cookie.indexOf(";",c_start)
       if (c_end==-1) c_end=document.cookie.length
       return unescape(document.cookie.substring(c_start,c_end))
-      } 
     }
+  }
   return ""
 }
 
@@ -105,12 +110,18 @@ function setCookie(c_name,value)
 
 function checkCookie()
 {
-  var tempusername=getCookie('username')
+  var tempusername=getCookie('username');
   if (tempusername!=null && tempusername!="")
   {
     // alert("cookie success");
     usernameNow=tempusername;
     logined();
+  }else{
+    var temp=getCookie('mername');
+    if(temp!=null && temp!=""){
+      window.location.href="merChant.html?id="+temp;
+      delCookie();
+    }
   }
 }
 
@@ -135,10 +146,12 @@ function logined(){
 
 function delCookie(){
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  window.location.reload();
+  document.cookie = "mername=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  // window.location.reload();
 }
 
 function load(){
+  checkCookie();
    $.ajax({
       type:"POST",
       url:"php/userorder.php",
@@ -169,17 +182,21 @@ function load(){
               var divin=document.createElement("div");
               divin.innerText=getData.orders[o].detail[det].itemname;
               div.appendChild(divin);
+
+              var divl=document.createElement("div");
+              divl.className="pricecontain";
               var divbtn=document.createElement("div");
-              divbtn.style="padding-left: 20%;";
+              divbtn.className="pricecontain-div";
               divbtn.innerText="单价";
-              div.appendChild(divbtn);
+              divl.appendChild(divbtn);
               var divprice=document.createElement("div");
               divprice.className="addPrice";
               divprice.innerText="¥"+getData.orders[o].detail[det].price;
-              div.appendChild(divprice);
+              divl.appendChild(divprice);
               var btn1=document.createElement("button");
               btn1.innerText="X"+getData.orders[o].detail[det].number;
-              div.appendChild(btn1);
+              divl.appendChild(btn1);
+              div.appendChild(divl);
               document.getElementById("addlist").appendChild(div);
             }
           }else{
@@ -194,17 +211,21 @@ function load(){
               var divin=document.createElement("div");
               divin.innerText=getData.orders[o].detail[det].itemname;
               div.appendChild(divin);
+
+              var divl=document.createElement("div");
+              divl.className="pricecontain";
               var divbtn=document.createElement("div");
-              divbtn.style="padding-left: 20%;";
+              divbtn.className="pricecontain-div";
               divbtn.innerText="单价";
-              div.appendChild(divbtn);
+              divl.appendChild(divbtn);
               var divprice=document.createElement("div");
               divprice.className="addPrice";
               divprice.innerText="¥"+getData.orders[o].detail[det].price;
-              div.appendChild(divprice);
+              divl.appendChild(divprice);
               var btn1=document.createElement("button");
               btn1.innerText="X"+getData.orders[o].detail[det].number;
-              div.appendChild(btn1);
+              divl.appendChild(btn1);
+              div.appendChild(divl);
               wrapdiv.appendChild(div);
             }
             document.getElementById("paidlist").appendChild(wrapdiv);
@@ -221,6 +242,7 @@ function load(){
 
 function pay(){
   $.ajax({
+    // TODO：付款文件写了吗。。没找到
       type:"POST",
       url:"php/pay.php",
       datatype:"json",

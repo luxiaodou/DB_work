@@ -19,14 +19,14 @@ function loadMerchant(){
       success: function(o){
         // alert("success");
         var json=eval('('+o+')');
-          var n=document.getElementById("List_N");
-          var e=document.getElementById("List_E");
-          var p=document.getElementById("List_P");
-          var a=document.getElementById("List_A");
-          n.value=json.name;
-          e.value=json.email;
-          p.value=json.phone;
-          a.value=json.addr;
+          var n=document.getElementById("list_N");
+          var e=document.getElementById("list_E");
+          var p=document.getElementById("list_P");
+          var a=document.getElementById("list_A");
+          n.innerText=json.name;
+          e.innerText=json.email;
+          p.innerText=json.phone;
+          a.innerText=json.addr;
         },
         error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  

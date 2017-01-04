@@ -14,124 +14,140 @@ function jumpSearch(){
   window.location.href="result.html?class=-1&keyword="+id.value;
 }
 
-function submit1(){ 
+
+function submit1(){
+    // alert("f");
     var na=document.getElementById("user1").value;
     var pw=document.getElementById("pass1").value;
-    if (na.value==null||pw.value==null) {alert("请填写完全");}
-    else{
-    // alert(document.getElementById("user1").value); 
-    $.ajax({
-      type:"POST",
-      url:"php/login.php",
-      datatype:"json",
-      async: false,
-      data:{
-        name:na,
-        password:pw,
-        type:1
-      },
-      success: function(data){
-        // alert("success");
-        var getData=eval('('+data+')');
-        if(getData.result==0){
-          setCookie("username",getData.id);
-          usernameNow=getData.id;
-          logined();
-        }else{
-          alert("用户名密码错误！");
-        }
-      },
-      error: function(jqXHR){     
-     alert("发生错误：" + jqXHR.status);  
-    },   
-  });
-  }
-}  
-
-function submit2(){  
-    var na=document.getElementById("user2").value;
-    var pw=document.getElementById("pass2").value;
     if (na==""||pw=="") {alert("请填写完全");}
     else{
-    // alert(document.getElementById("user1").value); 
-    $.ajax({
-      type:"POST",
-      url:"php/login.php",
-      datatype:"json",
-      async: false,
-      data:{
-        name:na,
-        password:pw,
-        type:2
-      },
-      success: function(data){
-        // alert("success");
-        var getData=eval('('+data+')');
-        if(getData.result==0){
-          window.location.href="merChant.html?id="+getData.id;
-        }else{
-          alert("用户名密码错误！");
-        }
-      },
-      error: function(jqXHR){     
-     alert("发生错误：" + jqXHR.status);  
-    },   
-  });
-  }
-}  
+        // alert(document.getElementById("user1").value);
+
+        $.ajax({
+            type:"POST",
+            url:"php/login.php",
+            datatype:"json",
+            async: false,
+            data:{
+                name:na,
+                password:pw,
+                type:1
+            },
+            success: function(data){
+                // alert("success");
+                var json1=eval('('+data+')');
+                if(json1.result==0){
+                    setCookie("username",json1.id);
+                    usernameNow=json1.id;
+                    logined();
+                }else{
+                    alert("用户名或密码错误！");
+                }
+            },
+            error: function(jqXHR){
+                alert("发生错误：" + jqXHR.status);
+            },
+        });
+    }
+}
+
+function submit2(){
+
+    var na=document.getElementById("user2").value;
+    var pw=document.getElementById("pass2").value;
+    // alert("ff");
+    if (na==""||pw=="") {alert("请填写完全");}
+    else{
+        // alert(document.getElementById("user1").value);
+        $.ajax({
+            type:"POST",
+            url:"php/login.php",
+            datatype:"json",
+            async: false,
+            data:{
+                name:na,
+                password:pw,
+                type:2
+            },
+            success: function(data){
+
+                var json1=eval('('+data+')');
+
+                if(json1.result==0){
+                    // alert("success");
+                    setCookie('mername',json1.id);
+                }else{
+                    alert("用户名密码错误！");
+                }
+            },
+            error: function(jqXHR){
+                alert("发生错误：" + jqXHR.status);
+            },
+        });
+    }
+}
 
 function getCookie(c_name)
 {
-  if (document.cookie.length>0)
+    if (document.cookie.length>0)
     {
-    c_start=document.cookie.indexOf(c_name + "=")
-    if (c_start!=-1)
-      { 
-      c_start=c_start + c_name.length+1 
-      c_end=document.cookie.indexOf(";",c_start)
-      if (c_end==-1) c_end=document.cookie.length
-      return unescape(document.cookie.substring(c_start,c_end))
-      } 
+        c_start=document.cookie.indexOf(c_name + "=")
+        if (c_start!=-1)
+        {
+            c_start=c_start + c_name.length+1
+            c_end=document.cookie.indexOf(";",c_start)
+            if (c_end==-1) c_end=document.cookie.length
+            return unescape(document.cookie.substring(c_start,c_end))
+        }
     }
-  return ""
+    return ""
 }
 
 function setCookie(c_name,value)
 {
-  document.cookie=c_name+ "=" +escape(value)+ ";";
+    document.cookie=c_name+ "=" +escape(value)+ ";";
 }
 
 function checkCookie()
 {
-  var tempusername=getCookie('username')
-  if (tempusername!=null && tempusername!="")
-  {
-    // alert("cookie success");
-    usernameNow=tempusername;
-    logined();
-  }
+    var tempusername=getCookie('username');
+    if (tempusername!=null && tempusername!="")
+    {
+        // alert("cookie success");
+        usernameNow=tempusername;
+        logined();
+    }else{
+        var temp=getCookie('mername');
+        if(temp!=null && temp!=""){
+            window.location.href="merChant.html?id="+temp;
+            delCookie();
+        }
+    }
 }
 
 function logined(){
-  // alert("in logined");
-  var logincus=document.getElementById("loginCus");
-  var loginMer=document.getElementById("loginMer");
-  var user=document.getElementById("UserName");
-  var userdrop=document.getElementById("UserDropdown");
-  // alert(usernameNow);
-  // alert(logincus.innerHTML);
-  // alert(loginMer.innerHTML);
-  // alert(user.innerHTML);
-  logincus.style="display:none;";
-  loginMer.style.display="none";
-  user.style.display="block";
-  user.innerHTML=usernameNow;
-  userdrop.style.display="block";
+    // alert("in logined");
+    var logincus=document.getElementById("loginCus");
+    var loginMer=document.getElementById("loginMer");
+    var user=document.getElementById("UserName");
+    var userdrop=document.getElementById("UserDropdown");
+    // alert(usernameNow);
+    // alert(logincus.innerHTML);
+    // alert(loginMer.innerHTML);
+    // alert(user.innerHTML);
+    logincus.style="display:none;";
+    loginMer.style.display="none";
+    user.style.display="block";
+    user.innerHTML=usernameNow;
+    userdrop.style.display="block";
 }
 
+
+
 function delCookie(){
-  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  window.location.reload();
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    document.cookie = "mername=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    // window.location.reload();
 }
 
 function loadmer(){
@@ -277,6 +293,7 @@ function loadcomment(){
 }
 
 function createorder(){
+    var val=document.getElementById("num").value;
   $.ajax({
       type:"POST",
       url:"php/createorder.php",
@@ -285,13 +302,17 @@ function createorder(){
       data:{
         username:usernameNow,
         itemid:strs[1],
-        number:document.getElementById("num").value
+        number:val
       },
       success: function(o){
-        // alert("success");
-          var result=eval('('+o+')');
-          if(result.res==0){
+          // alert(o.res);
+          // TODO:返回不为json所以无法debug
+          var result2=eval('('+o+')');
+          alert("success");
+          if(result2.res==0){
             alert("订单提交成功！");
+          }else{
+              alert("库存不足！");
           }
         },
       error: function(jqXHR){     

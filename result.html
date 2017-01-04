@@ -64,7 +64,7 @@ body{
 
 .noItem{
   padding-top: 50px;
-  text-align: center；
+  text-align:center;
   width:500px;
 }
 
@@ -90,10 +90,19 @@ body{
 }
 
 .addPrice{
-  margin-left: 20px;
   color:#f76120;
-  padding-top: 5px;
 }
+
+.pricecontain{
+  width:300px;
+  height: 160px;
+  float:right;
+}
+  .pricecontain-div{
+    padding-top: 120px;
+    padding-left:140px;
+    display: inline-block;
+  }
 
 </style>
   </head>
@@ -109,7 +118,7 @@ body{
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">乐购</a>
+            <a class="navbar-brand" href="index.html">乐购</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -136,6 +145,7 @@ body{
                 </a>
                 <ul class="dropdown-menu">
                   <li><a href="user.html">个人主页</a></li>
+                  <li><a href="paylist.html">购物清单</a></li>
                   <li><a href="#" onclick="delCookie()">退出登录</a></li>
                 </ul>
               </li>
@@ -215,14 +225,17 @@ body{
     <div class="container">
       <div class="list-sytle wrapper" id="ListWrapper">
         <div id="noItem" class="noItem" style="display: none;"><h1>呀！什么也没搜到！</h1><h3 style="padding-top: 20px">换个词试试？</h3></div>
-        <!-- <div class="itemList">
-          <div id="click0" onclick="getin(this.id)">
-            <img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp">
-            <div>【8店通用】芦月轩羊蝎子</div>
-          </div>
-          <div style="padding-left: 20%;">单价</div>
-          <div class="addPrice">¥69.9</div>
-        </div> -->
+        <!--<div class="itemList">-->
+          <!--<div id="click0" onclick="getin(this.id)">-->
+            <!--<img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp">-->
+            <!--<div>【8店通用】芦月轩羊蝎子</div>-->
+          <!--</div>-->
+          <!--<button class="btn btn-default" id="c0" onclick="getin(this.id)">点我前往</button>-->
+          <!--<div class="pricecontain">-->
+            <!--<div class="pricecontain-div" >单价</div>-->
+            <!--<div class="addPrice">¥69.9</div>-->
+          <!--</div>-->
+        <!--</div>-->
       </div>
     
     </div>

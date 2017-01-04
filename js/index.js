@@ -1,12 +1,6 @@
 var usernameNow;
 
-$(document).ready(function(){
-    $("#myNav").affix({
-        offset: { 
-            top: 550
-      }
-    });
-});
+
 
 function submit1(){ 
     // alert("f");
@@ -28,10 +22,10 @@ function submit1(){
       },
       success: function(data){
         // alert("success");
-        var json=eval('('+data+')');
-        if(json.result==0){
-          setCookie("username",json.id);
-          usernameNow=json.id;
+        var json1=eval('('+data+')');
+        if(json1.result==0){
+          setCookie("username",json1.id);
+          usernameNow=json1.id;
           logined();
         }else{
           alert("用户名或密码错误！");
@@ -44,9 +38,11 @@ function submit1(){
   }
 }  
 
-function submit2(){  
+function submit2(){
+
     var na=document.getElementById("user2").value;
     var pw=document.getElementById("pass2").value;
+    // alert("ff");
     if (na==""||pw=="") {alert("请填写完全");}
     else{
     // alert(document.getElementById("user1").value); 
@@ -61,10 +57,12 @@ function submit2(){
         type:2
       },
       success: function(data){
-        // alert("success");
-        var json=eval('('+data+')');
-        if(json.result==0){
-          window.location.href="merChant.html?id="+json.id;
+
+        var json1=eval('('+data+')');
+
+        if(json1.result==0){
+          // alert("success");
+          setCookie('mername',json1.id);
         }else{
           alert("用户名密码错误！");
         }
@@ -99,12 +97,18 @@ function setCookie(c_name,value)
 
 function checkCookie()
 {
-  var tempusername=getCookie('username')
+  var tempusername=getCookie('username');
   if (tempusername!=null && tempusername!="")
   {
     // alert("cookie success");
     usernameNow=tempusername;
     logined();
+  }else{
+  var temp=getCookie('mername');
+  if(temp!=null && temp!=""){
+    window.location.href="merChant.html?id="+temp;
+    delCookie();
+  }
   }
 }
 
@@ -129,7 +133,8 @@ function logined(){
 
 function delCookie(){
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  window.location.reload();
+  document.cookie = "mername=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  // window.location.reload();
 }
 
 function load(){
@@ -190,3 +195,11 @@ function jumpSearch(){
   alert(id.value);
   window.location.href="result.html?class=-1&keyword="+id.value;
 }
+
+$(document).ready(function(){
+  $("#myNav").affix({
+    offset: {
+      top: 550
+    }
+  });
+});

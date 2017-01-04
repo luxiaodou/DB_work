@@ -1,22 +1,20 @@
 var usernameNow;
 var sp=new Array();
-function subNum(){
-  if(parseInt(document.getElementById("num").value)>1){
-    document.getElementById("num").value=parseInt(document.getElementById("num").value)-1;
-  }
-}
-function addNum(){
-  document.getElementById("num").value=parseInt(document.getElementById("num").value)+1;
-}
 
 
-function submit1(){ 
-    // alert("f");
-    var na=document.getElementById("user1").value;
-    var pw=document.getElementById("pass1").value;
-    if (na==""||pw=="") {alert("请填写完全");}
-    else{
-    // alert(document.getElementById("user1").value); 
+
+
+var usernameNow;
+
+
+
+function submit1(){
+  // alert("f");
+  var na=document.getElementById("user1").value;
+  var pw=document.getElementById("pass1").value;
+  if (na==""||pw=="") {alert("请填写完全");}
+  else{
+    // alert(document.getElementById("user1").value);
 
     $.ajax({
       type:"POST",
@@ -30,33 +28,30 @@ function submit1(){
       },
       success: function(data){
         // alert("success");
-        var json=eval('('+data+')');
-        if(json.result==0){
-          setCookie("username",json.id);
-          usernameNow=json.id;
+        var json1=eval('('+data+')');
+        if(json1.result==0){
+          setCookie("username",json1.id);
+          usernameNow=json1.id;
           logined();
         }else{
           alert("用户名或密码错误！");
         }
       },
-      error: function(jqXHR){     
-	   alert("发生错误：" + jqXHR.status);  
-	  },   
-  });
+      error: function(jqXHR){
+        alert("发生错误：" + jqXHR.status);
+      },
+    });
   }
-}  
-
-function jumpSearch(){
-  var id=document.getElementById("searchInput");
-  window.location.href="result.html?class=-1&keyword="+id.value;
 }
 
-function submit2(){  
-    var na=document.getElementById("user2").value;
-    var pw=document.getElementById("pass2").value;
-    if (na==""||pw=="") {alert("请填写完全");}
-    else{
-    // alert(document.getElementById("user1").value); 
+function submit2(){
+
+  var na=document.getElementById("user2").value;
+  var pw=document.getElementById("pass2").value;
+  // alert("ff");
+  if (na==""||pw=="") {alert("请填写完全");}
+  else{
+    // alert(document.getElementById("user1").value);
     $.ajax({
       type:"POST",
       url:"php/login.php",
@@ -68,34 +63,36 @@ function submit2(){
         type:2
       },
       success: function(data){
-        // alert("success");
-        var json=eval('('+data+')');
-        if(json.result==0){
-          window.location.href="merChant.html?id="+json.id;
+
+        var json1=eval('('+data+')');
+
+        if(json1.result==0){
+          // alert("success");
+          setCookie('mername',json1.id);
         }else{
           alert("用户名密码错误！");
         }
       },
-      error: function(jqXHR){     
-     alert("发生错误：" + jqXHR.status);  
-    },   
-  });
+      error: function(jqXHR){
+        alert("发生错误：" + jqXHR.status);
+      },
+    });
   }
-}  
+}
 
 function getCookie(c_name)
 {
   if (document.cookie.length>0)
-    {
+  {
     c_start=document.cookie.indexOf(c_name + "=")
     if (c_start!=-1)
-      { 
-      c_start=c_start + c_name.length+1 
+    {
+      c_start=c_start + c_name.length+1
       c_end=document.cookie.indexOf(";",c_start)
       if (c_end==-1) c_end=document.cookie.length
       return unescape(document.cookie.substring(c_start,c_end))
-      } 
     }
+  }
   return ""
 }
 
@@ -106,12 +103,18 @@ function setCookie(c_name,value)
 
 function checkCookie()
 {
-  var tempusername=getCookie('username')
+  var tempusername=getCookie('username');
   if (tempusername!=null && tempusername!="")
   {
     // alert("cookie success");
     usernameNow=tempusername;
     logined();
+  }else{
+    var temp=getCookie('mername');
+    if(temp!=null && temp!=""){
+      window.location.href="merChant.html?id="+temp;
+      delCookie();
+    }
   }
 }
 
@@ -134,14 +137,22 @@ function logined(){
 
 
 
-
 function delCookie(){
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  window.location.reload();
+  document.cookie = "mername=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  // window.location.reload();
+}
+
+function jumpSearch(){
+  var id=document.getElementById("searchInput");
+  window.location.href="result.html?class=-1&keyword="+id.value;
 }
 
 
+
+
 function load(){
+  checkCookie();
   sp=window.location.href.split("=");
   var spp=new Array();
   spp=sp[1].split("&");
@@ -172,8 +183,7 @@ function load(){
             div.className="itemList";
 
             var divin=document.createElement("div");
-            divin.id="c"+o;
-            divin.onclick="getin(this.id)";
+
 
             var img=document.createElement("img");
             img.src=getData.items[o].image;
@@ -184,15 +194,26 @@ function load(){
             divin.appendChild(divv);
             div.appendChild(divin);
 
+            var btn=document.createElement("button");
+            btn.className="btn btn-default";
+            btn.id="c"+getData.items[o].id;
+            btn.onclick=function(){getin(this.id)};
+            btn.innerText="点我前往";
+            div.appendChild(btn);
+
+            var divse=document.createElement("div");
+            divse.className="pricecontain";
+
             var anodiv=document.createElement("div");
-            anodiv.style="padding-left: 20%;";
+            anodiv.className="pricecontain-div";
             anodiv.innerText="单价";
-            div.appendChild(anodiv);
+            divse.appendChild(anodiv);
 
             var lastdiv=document.createElement("div");
             lastdiv.className="addPrice";
             lastdiv.innerText="¥"+getData.items[o].price;
-            div.appendChild(lastdiv);
+            divse.appendChild(lastdiv);
+            div.appendChild(divse);
             document.getElementById("ListWrapper").appendChild(div);
           }
         }
@@ -205,5 +226,6 @@ function load(){
 
 
 function getin(id){
-  window.location.href="mer.html?id="+id;;
+  var rea=id.split("c");
+  window.location.href="mer.html?id="+rea[1];;
 }

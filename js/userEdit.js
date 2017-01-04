@@ -105,6 +105,7 @@ function submit1(){
       datatype:"json",
       async: false,
       data:{
+        //  TODO: 这个不该有userid传入。用户反正也不能更改。
         name:usernameNow,
         addr:mA,
         phone:mP,

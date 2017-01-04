@@ -5,12 +5,12 @@ function getCookie(c_name)
     {
     c_start=document.cookie.indexOf(c_name + "=")
     if (c_start!=-1)
-      { 
-      c_start=c_start + c_name.length+1 
+      {
+      c_start=c_start + c_name.length+1
       c_end=document.cookie.indexOf(";",c_start)
       if (c_end==-1) c_end=document.cookie.length
       return unescape(document.cookie.substring(c_start,c_end))
-      } 
+      }
     }
   return ""
 }
@@ -74,18 +74,19 @@ function loadInfo(){
       },
       success: function(o){
         // alert("success");
-        var json=eval('('+o+')');
-          var mN=document.getElementById("List_N");
-          var mD=document.getElementById("List_AG");
-          var hm=document.getElementById("List_E");
-          var m=document.getElementById("List_P");
-          var a=document.getElementById("List_A");
-          var img=document.getElementById("List_Img");
-          img.value=json.image;
-          mD.value=json.age;
-          hm.value=json.email;
-          m.value=json.phone;
-          a.value=json.addr;
+        var json1=eval('('+o+')');
+          var mN=document.getElementById("list_N");
+          var mD=document.getElementById("list_AG");
+          var hm=document.getElementById("list_E");
+          var m=document.getElementById("list_P");
+          var a=document.getElementById("list_A");
+          var img=document.getElementById("list_Img");
+        // console.log(json1.image,json1.age);
+          img.innerText=json1.image;
+          mD.innerText=json1.age;
+          hm.innerText=json1.email;
+          m.innerText=json1.phone;
+          a.innerText=json1.addr;
         },
         error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  
