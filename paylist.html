@@ -59,7 +59,7 @@ body{
   font-size: 50px;
   color: #00bba6;
   padding-bottom: 20px;
-  border-bottom: 2px solid #222222;
+  border-bottom: 2px solid #BFBFBF;
 }
 
 .noItem{
@@ -70,7 +70,7 @@ body{
 
 .itemList{
   height: 200px;
-  border-bottom: 2px solid #222222;
+  border-bottom: 2px solid #BFBFBF;
 }
 
 .itemList{
@@ -87,6 +87,43 @@ body{
 .itemList div{
   display: inline-block;
   font-size: 20px;
+}
+
+.midinput{
+  width: 40px;
+}
+
+.btn-group{
+  margin-left:20%;
+}
+
+.btn-pay{
+  margin-top: 40px;
+  margin-left: 50px;
+  height: 50px;
+  width: 110px;
+  font-size: 20px;font-weight: bold;
+  color: white;
+  background-color: #6E6E6E;
+}
+
+.addPrice{
+  margin-left: 20px;
+  color:#f76120;
+  padding-top: 5px;
+}
+
+.border{
+  border: 1px solid #222222;
+  border-radius: 5px;
+}
+
+.paidlist{
+  margin-top: 50px;
+}
+
+hr{
+  border-color: white;
 }
 
 
@@ -210,14 +247,35 @@ body{
     <!-- end 商家登录 -->
     <div class="container">
       <div class="list-sytle wrapper" id="ListWrapper">
-        <div class="Nothing"><span class="glyphicon glyphicon-shopping-cart cartSize"></span>我的购买清单</div>
-        <div id="noItem" class="noItem" style="display: none;"><h1>呀！您的购物清单还是空的</h1><h3 style="padding-top: 20px">去<a href="index.html">首页</a>团购喜欢的产品</h3></div>
-        <div class="itemList"><img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp">
-          <div>【8店通用】芦月轩羊蝎子</div>
-          <div>
-            
-          </div>
+        <div id="addlist">
+          <div class="Nothing"><span class="glyphicon glyphicon-shopping-cart cartSize"></span>我的购买清单<h1 style="color: black;" id="unPay">未支付的订单：</h1></div>
+          
+          <!-- <div class="itemList"><img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp">
+            <div>【8店通用】芦月轩羊蝎子</div>
+            <div style="padding-left: 20%;">单价</div>
+            <div class="addPrice">¥69.9</div>
+            <div class="" id="itemNum">X2</div>
+          </div> -->
         </div>
+        <div class="pay" id="pay">
+          <button value="" id="paybtn" class="btn btn-default btn-pay" onclick="pay()">立即支付</button>
+        </div>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <div id="paidlist">
+          <div class="Nothing"><h1 style="color: black;" id="unPay">已支付的订单：</h1></div>
+          <!-- <div class="border">
+          <div class="itemList"><img src="http://p1.meituan.net/deal/86aa598d94f2482cc1cdc943ae34946737557.jpg@260w_154h_1e.webp">
+            <div>【8店通用】芦月轩羊蝎子</div>
+            <div style="padding-left: 20%">单价</div>
+            <div class="addPrice" id="price1">¥69.9</div>
+            <div class="" id="itemNum">X2</div>
+          </div>
+          </div> -->
+        </div>
+        
       </div>
     
     </div>

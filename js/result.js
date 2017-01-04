@@ -1,12 +1,13 @@
 var usernameNow;
+function subNum(){
+  if(parseInt(document.getElementById("num").value)>1){
+    document.getElementById("num").value=parseInt(document.getElementById("num").value)-1;
+  }
+}
+function addNum(){
+  document.getElementById("num").value=parseInt(document.getElementById("num").value)+1;
+}
 
-$(document).ready(function(){
-    $("#myNav").affix({
-        offset: { 
-            top: 550
-      }
-    });
-});
 
 function submit1(){ 
     // alert("f");
@@ -130,57 +131,4 @@ function logined(){
 function delCookie(){
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   window.location.reload();
-}
-
-function load(){
-  checkCookie();
-  loadlo();
-}
-
-function loadlo(){
-  // alert("f");
-  for (var i = 1 ; i < 6; i++) {
-    $.ajax({
-      type:"POST",
-      url:"php/loadindex.php",
-      datatype:"json",
-      async: false,
-      data:{
-        class:i
-      },
-      success: function(items){
-        // alert(items);
-        var json1=eval('('+items+')');
-        // alert("F");
-        // alert(items.items.length);
-        var j=1;
-        // alert(json1.items[0].id);
-
-        for(var o in json1.items){
-          var img=document.getElementById("class"+i+"-"+j+"-img");
-          var h=document.getElementById("class"+i+"-"+j+"-h");
-          var d=document.getElementById("class"+i+"-"+j+"-d");
-          var hm=document.getElementById("class"+i+"-"+j+"-hm");
-          var m=document.getElementById("class"+i+"-"+j+"-m");
-          // console.log(json1.items[o.toString()].id,json1.items[o.toString()].id);
-          img.parentNode.parentNode.id=json1.items[o.toString()].id;
-          img.src=json1.items[o.toString()].image;
-          h.innerText=json1.items[o.toString()].name;
-          d.innerText=json1.items[o.toString()].brief;
-          hm.innerText="¥"+json1.items[o.toString()].price;
-          m.innerText="¥"+json1.items[o.toString()].origin;
-          j++;
-          if(i==3&&j==3)break;
-          if(j==7)break;
-        }
-      },
-      error: function(jqXHR){     
-     alert("发生错误：" + jqXHR.status);  
-    },   
-    });
-  }
-}
-
-function jump(thisid){
-  window.location.href="mer.html?id="+thisid;
 }
