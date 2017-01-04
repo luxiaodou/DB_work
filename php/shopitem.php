@@ -45,8 +45,8 @@ require_once 'mysql.php';
 
 $conn = sconnectDb();
 
-//$shop_id = $_POST['shop_id'];
-$shop_id = '1';
+$shop_id = $_POST['shop_id'];
+//$shop_id = '1';
 if (empty($shop_id)) {
     die('shop_id is empty!');
 }
