@@ -140,7 +140,7 @@ function loadmer(){
       datatype:"json",
       async: false,
       data:{
-        id:1
+        id:strs[1]
       },
       success: function(o){
         // alert("success");
