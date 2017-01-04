@@ -62,6 +62,7 @@ if ($type == 1) {
 //        printf("success2");
         echo json_encode($obj);
     } else {
+
         $obj->result = 1;
         $obj->id = 'ERROR!';
 //        printf('failed2');
