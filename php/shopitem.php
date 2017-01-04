@@ -3,17 +3,17 @@
  * Created by PhpStorm.
  * User: luxiaodou
  * Date: 2017/1/4
- * Time: 0:31
+ * Time: 14:47
  */
 /*
- * 加载主页内容的函数
+ * 显示商家所有商品的函数
  * 输入：
- *     class: classid
- *
+ *      shopid
  * 输出：
- *     items:
- *      [
- *          {
+ *      num:共有几个商品
+ *      items:
+ *          [
+ *              {
  *                  id:
  *                  name:
  *                  price:
@@ -22,8 +22,10 @@
  *                  shop:
  *                  class:
  *                  image:
- *          },
- *          {
+ *                  stars:
+ *                  rest:
+ *              },
+ *              {
  *                  id:
  *                  name:
  *                  price:
@@ -32,32 +34,32 @@
  *                  shop:
  *                  class:
  *                  image:
- *          }...
- *      ]
- *
+ *                  star:
+ *                  rest:
+ *              }...
+ *          ]
  *
  */
 
 require_once 'mysql.php';
 
-$conn = uconnectDb();
+$conn = sconnectDb();
 
-$class = $_POST['class'];
-//$class = '5';
-
-if (empty($class)) {
-    die('class is empty!');
+//$shop_id = $_POST['shop_id'];
+$shop_id = '1';
+if (empty($shop_id)) {
+    die('shop_id is empty!');
 }
 
-$class = intval($class);
+$shop_id = intval($shop_id);
 
-$result = mysql_query("select * from item where item_class = '$class'");
+$result = mysql_query("select * from item where item_shop = '$shop_id'");
 $dataCount = mysql_num_rows($result);
 $out = new stdClass();
+$out->num = $dataCount;
 $out_array = array();
 for ($i = 0; $i < $dataCount; $i++) {
     $arr = mysql_fetch_assoc($result);
-//    print_r($arr);
     $out_array[$i] = new stdClass();
     $out_array[$i]->id = $arr['item_id'];
     $out_array[$i]->name = $arr['item_name'];
@@ -67,10 +69,8 @@ for ($i = 0; $i < $dataCount; $i++) {
     $out_array[$i]->shop = $arr['item_shop'];
     $out_array[$i]->class = $arr['item_class'];
     $out_array[$i]->image = $arr['item_image'];
+    $out_array[$i]->star = $arr['item_stars'];
+    $out_array[$i]->rest = $arr['item_rest'];
 }
 $out->items = $out_array;
 echo json_encode($out);
-
-
-
-

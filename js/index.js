@@ -149,7 +149,7 @@ function loadlo(){
         // alert("success");
         var json=eval('('+items+')');
         var j=1;
-        for(var o in items){
+        for(var o=0;o<items.length;o++){
           var img=document.getElementById("class"+i+"-"+j+"-img");
           var h=document.getElementById("class"+i+"-"+j+"-h");
           var d=document.getElementById("class"+i+"-"+j+"-d");
@@ -157,10 +157,10 @@ function loadlo(){
           var m=document.getElementById("class"+i+"-"+j+"-m");
           img.parentNode.parentNode.id=items[o].id;
           img.src=items[o].image;
-          h.innerHTML=items[o].name;
-          d.innerHTML=items[o].brief;
-          hm.innerHTML=items[o].price;
-          m.innerHTML=items[o].origin;
+          h.value=items[o].name;
+          d.value=items[o].brief;
+          hm.value=items[o].price;
+          m.value=items[o].origin;
           j++;
           if(i==2||j==2)break;
           if(j==6)break;

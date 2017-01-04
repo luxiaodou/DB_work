@@ -63,7 +63,7 @@ if ($type == 1) {
 
     $result = mysql_query("insert into users(user_name,user_email,user_password,user_reg_date) VALUES ('$name','$email','$pw','$time')",$conn);
     if (!mysql_errno()) {
-        echo "<script language=javascript>alert('用户注册成功！');history.go(-1);</script>";
+        echo "<script language=javascript>alert('用户注册成功！');window.location.href='/index.html';</script>";
     }
 } elseif ($type == 2) {
     $result = mysql_query("select * from shop where shop_name = '$name'",$conn);
@@ -71,9 +71,9 @@ if ($type == 1) {
     if ($dataCount) {
         echo "<script language=javascript>alert('该用户名已经存在！请登陆或尝试其他用户名！');history.go(-1);</script>";
     }
-    mysql_query("insert into shop(shop_name,shop_email,shop_password) VALUES ('$name','$email','$pw')",$conn);
+//    mysql_query("insert into shop(shop_name,shop_email,shop_password) VALUES ('$name','$email','$pw')",$conn);
     if (!mysql_errno()) {
-        print_r("商户注册成功！");
+        echo "<script language=javascript>alert('商家注册成功！');window.location.href='/index.html';</script>";
     }
 } else {
     die('表单类型错误！');
