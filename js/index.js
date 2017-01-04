@@ -119,7 +119,7 @@ function logined(){
   logincus.style="display:none;";
   loginMer.style.display="none";
   user.style.display="block";
-  user.innerHTML=usernameNow;
+  user.value=usernameNow;
   userdrop.style.display="block";
 }
 
