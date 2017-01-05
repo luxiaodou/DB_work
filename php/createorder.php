@@ -31,5 +31,5 @@ $arr = mysql_fetch_assoc($res);
 $out = new stdClass();
 $out->res = $arr['res'];
 
-echo "{\"res\":\"1\"}";
+//echo "{\"res\":\"1\"}";
 echo json_encode($out);
