@@ -28,8 +28,8 @@ $res = mysql_query("delete from item where item_id = '$id'");
 
 $out = new stdClass();
 if (mysql_errno()) {
-    $out->res = '0';
-}else{
     $out->res = '1';
+}else{
+    $out->res = '0';
 }
 echo json_encode($out);

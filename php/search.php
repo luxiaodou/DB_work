@@ -46,10 +46,12 @@ $conn = uconnectDb();
 
 $classid = $_POST['classid'];
 $keyword = $_POST['keyword'];
+$keyword = urldecode($keyword);
 //$classid = -1;
 //$keyword = '';
 //$keyword = '宾馆';
 //$keyword = '没东西';
+
 if ($classid == -1) {
     $res = mysql_query("select * from item where item_name LIKE '%$keyword%'");
 } else {
