@@ -92,7 +92,7 @@ body{
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="找点新鲜玩意..." id="searchInput">
               </div>
-              <button type="submit" class="btn btn-default" onclick="jumpSearch()">Submit</button>
+              <input type="button" class="btn btn-default" onclick="jumpSearch()" value="Submit">
             </form>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#" data-toggle="modal" data-target="#merchantModal" id="mecName">商家名称</a></li>
@@ -114,6 +114,7 @@ body{
               <div><label>邮箱：</label><li class="list-group-item" id="list_E">903030303</li></div>
               <div><label>电话：</label><li class="list-group-item" id="list_P">903030303</li></div>
               <div><label>地址：</label><li class="list-group-item" id="list_A">903030303</li></div>
+              <div><label>收入：</label><li class="list-group-item" id="list_I">903030303</li></div>
               <!-- <div>
                 <div class="editDiv">
                   <a class="glyphicon glyphicon-remove" onclick="deleteitem(this.id)"></a>

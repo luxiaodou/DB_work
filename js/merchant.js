@@ -23,10 +23,12 @@ function loadMerchant(){
       var e=document.getElementById("list_E");
       var p=document.getElementById("list_P");
       var a=document.getElementById("list_A");
+      var i=document.getElementById("list_I");
       n.innerText=json.name;
       e.innerText=json.email;
       p.innerText=json.phone;
       a.innerText=json.addr;
+      i.innerText=json.income;
     },
     	error: function(jqXHR){     
 	   alert("发生错误：" + jqXHR.status);  

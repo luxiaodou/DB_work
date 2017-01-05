@@ -81,12 +81,14 @@ function loadInfo(){
           var m=document.getElementById("list_P");
           var a=document.getElementById("list_A");
           var img=document.getElementById("list_Img");
+          var out=document.getElementById("list_Out");
         // console.log(json1.image,json1.age);
           img.innerText=json1.image;
           mD.innerText=json1.age;
           hm.innerText=json1.email;
           m.innerText=json1.phone;
           a.innerText=json1.addr;
+          out.innerText=json1.outcome;
         },
         error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  

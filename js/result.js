@@ -3,11 +3,6 @@ var sp=new Array();
 
 
 
-
-var usernameNow;
-
-
-
 function submit1(){
   // alert("f");
   var na=document.getElementById("user1").value;
@@ -153,6 +148,7 @@ function jumpSearch(){
 
 function load(){
   checkCookie();
+  // alert(window.location.href);
   sp=window.location.href.split("=");
   var spp=new Array();
   spp=sp[1].split("&");
