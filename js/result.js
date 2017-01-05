@@ -154,6 +154,7 @@ function load(){
   spp=sp[1].split("&");
   sp[0]=spp[0];
   sp[1]=sp[2];
+  sp[1]=decodeURL(so[1]);
   if(sp[0]!=-1){
     var find=document.getElementById("page"+sp[0]);
     find.className="active";

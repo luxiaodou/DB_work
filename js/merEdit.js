@@ -11,7 +11,9 @@ function loadMerEdit(){
 	list=idlist[1].split("&");
 	idlist[0]=list[0];
 	idlist[1]=idlist[2];
+  // alert(idlist[0],idlist[1]);
   document.getElementById("mecName").innerText=idlist[0];
+  if(idlist[1]!=-1){
 	$.ajax({
       type:"POST",
       url:"php/loadmer.php",
@@ -31,7 +33,7 @@ function loadMerEdit(){
           img.innerText=json.image;
           mN.innerText=json.name;
           mD.innerText=json.brief;
-          hm.value=json.price;
+          hm.innerText=json.price;
           m.innerText=json.origin;
         },
         error: function(jqXHR){     
@@ -39,6 +41,7 @@ function loadMerEdit(){
       },  
        
     });
+}
 }
 
 

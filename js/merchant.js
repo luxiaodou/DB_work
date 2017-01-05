@@ -28,7 +28,6 @@ function loadMerchant(){
       e.innerText=json.email;
       p.innerText=json.phone;
       a.innerText=json.addr;
-      i.innerText=json.income;
     },
     	error: function(jqXHR){     
 	   alert("发生错误：" + jqXHR.status);  
@@ -74,6 +73,7 @@ function deleteitem(thisid){
 function edititem(thisid){
 	var tempid=new Array();
 	tempid=thisid.split("edit");
+
 	window.location.href="merEdit.html?mcid="+strs[1]+"&merid="+tempid[1];
 }
 
