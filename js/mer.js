@@ -175,6 +175,7 @@ function loadmer(){
           var store=document.getElementById("store");
           store.innerText=json1.rest;
           star.innerText=json1.star;
+          if (json1.star==null) {star.innerText=0;}
           img.src=json1.image;
           h.innerHTML=json1.name;
           d.innerHTML=json1.brief;
@@ -193,6 +194,7 @@ function loadmer(){
 function addComment(){
   var starNum=document.getElementById("commentLevel").value;
   var getCom=document.getElementById("textCom").value;
+  alert(starNum);
   // alert(getCom);
   $.ajax({
       type:"POST",
@@ -206,8 +208,14 @@ function addComment(){
         content:getCom
       },
       success: function(o){
-        // alert("success");
+        alert("success");
+        var json=eval('('+o+')');
+        if(json.res==0){
           window.location.reload();
+        }
+        else{
+          alert("提交失败！");
+        }
         },
       error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  
@@ -235,12 +243,32 @@ function loadcomment(){
         var bar5=document.getElementById("bar5");
         var getData=eval('('+data+')');
         // alert(parseFloat())
-        bar1.style="width:"+100*parseFloat(getData.star1)+"%;";
-        bar2.style="width:"+100*parseFloat(getData.star2)+"%;";
-        bar3.style="width:"+100*parseFloat(getData.star3)+"%;";
-        bar4.style="width:"+100*parseFloat(getData.star4)+"%;";
-        bar5.style="width:"+100*parseFloat(getData.star5)+"%;";
-        var num=Math.round((parseFloat(getData.star1)*1+parseFloat(getData.star2)*2+parseFloat(getData.star3)*3+parseFloat(getData.star4)*4+parseFloat(getData.star5)*5)*10)/10;
+        var star1=parseFloat(getData.star1);
+        var star2=parseFloat(getData.star2);
+        var star3=parseFloat(getData.star3);
+        var star4=parseFloat(getData.star4);
+        var star5=parseFloat(getData.star5);
+        if (getData.star1==null) {
+          star1=0;
+        }
+        if (getData.star2==null) {
+          star2=0;
+        }
+        if (getData.star3==null) {
+          star3=0;
+        }
+        if (getData.star4==null) {
+          star4=0;
+        }
+        if (getData.star5==null) {
+          star5=0;
+        }
+        bar1.style="width:"+100*star1+"%;";
+        bar2.style="width:"+100*star2+"%;";
+        bar3.style="width:"+100*star3+"%;";
+        bar4.style="width:"+100*star4+"%;";
+        bar5.style="width:"+100*star5+"%;";
+        var num=Math.round((star1*1+star2*2+star3*3+star4*4+star5*5)*10)/10;
         var highnum=document.getElementById("hightlightnum");
         highnum.innerText=num;
         var comnum=document.getElementById("comnum");

@@ -23,13 +23,13 @@ function load(){
 	        		var a1=document.createElement("a");
 	        		a1.className="glyphicon glyphicon-remove";
 	        		a1.id="del"+json.items[o].id;
-	        		a1.onclick=function(){deleteitem(a1.id);};
+	        		a1.onclick=function(){deleteitem(this.id);};
 	        		newdiv.appendChild(a1);
 
 	        		var a2=document.createElement("a");
 	        		a2.className="glyphicon glyphicon-pencil";
 	        		a2.id="mcid="+json.items[o].shop+"&merid="+json.items[o].id;
-	        		a2.onclick=function(){edititem(a2.id);};
+	        		a2.onclick=function(){edititem(this.id);};
 	        		newdiv.appendChild(a2);
 	        		div.appendChild(newdiv);
 

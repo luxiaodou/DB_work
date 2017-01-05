@@ -58,7 +58,12 @@ $out->star3 = $row['@p3'];
 $out->star4 = $row['@p4'];
 $out->star5 = $row['@p5'];
 $total = $row['@p6'];
-$out->number = $total;
+if ($total == null)
+    $out->number = 0;
+else
+    $out->number = $total;
+
+
 $res2 = mysql_query("select user_name,comment_time,comment_star,comment_content 
                     from comment,users where comment_user = user_id AND comment_item = $itemid");
 $out_array = array();

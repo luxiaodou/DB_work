@@ -8,7 +8,7 @@
 /*
  * 显示商家所有商品的函数
  * 输入：
- *      shopid
+ *      id
  * 输出：
  *      num:共有几个商品
  *      items:
@@ -45,7 +45,7 @@ require_once 'mysql.php';
 
 $conn = sconnectDb();
 
-$shop_id = $_POST['shop_id'];
+$shop_id = $_POST['id'];
 //$shop_id = '1';
 if (empty($shop_id)) {
     die('shop_id is empty!');
