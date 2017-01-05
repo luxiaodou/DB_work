@@ -70,7 +70,7 @@ function submitEdit(){
         success: function(o){
             // alert("success");
             var json=eval('('+o+')');
-            if(o.res==0){
+            if(json.res==0){
               window.location.href="merchant.html?id="+idlist[0];
             }else{
               alert("提交失败！");
