@@ -17,10 +17,10 @@ require_once 'mysql.php';
 
 $conn = uconnectDb();
 
-//$username = $_POST['username'];
-//$oid = $_POST['orderid'];
-$username = 'luxiaodou';
-$oid = '4';
+$username = $_POST['username'];
+$oid = $_POST['orderid'];
+//$username = 'luxiaodou';
+//$oid = '4';
 
 $res = mysql_query("select user_id from users where user_name = '$username'");
 $arr = mysql_fetch_assoc($res);

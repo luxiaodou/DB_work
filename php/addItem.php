@@ -37,8 +37,18 @@ $class = $_POST['class'];
 $image = $_POST['image'];
 $rest = $_POST['rest'];
 
-$res = mysql_query("INSERT INTO `item` (`item_id`, `item_name`, `item_price`, `item_origin`, `item_brief`, `item_shop`, `item_class`, `item_image`, `item_stars`, `item_brief`) 
-                    VALUES (NULL, '$name', '$price', '$origin', '$brief', '$shop', '$class', '$image', '','$rest')",$conn);
+//$name = '商品测试';
+//$id = '1';
+//$price = '20';
+//$origin = '19.98';
+//$brief = '测试描述';
+//$rest = 12;
+//$shop = 1;
+//$class =1 ;
+//$image = 'img';
+
+$res = mysql_query("INSERT INTO `item` (`item_id`, `item_name`, `item_price`, `item_origin`, `item_brief`, `item_shop`, `item_class`, `item_image`, `item_stars`, `item_rest`) 
+                    VALUES (NULL, '$name', '$price', '$origin', '$brief', '$shop', '$class', '$image', '', '$rest')",$conn);
 $out =new stdClass();
 if (mysql_errno()) {
     $out->res = '1';

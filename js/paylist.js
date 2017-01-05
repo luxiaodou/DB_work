@@ -165,12 +165,7 @@ function load(){
         var count=0;
         // alert("success");
         var getData=eval('('+data+')');
-        if (getData.flag==0) {
-          var up=document.getElementById("unpay");
-          var p=document.getElementById("pay");
-          up.style="display:none";
-          u.style="display:none";
-        }
+
         for(o in getData.orders){
           if(getData.orders[o].order_state==1){
             for(det in getData.orders[o].detail){
@@ -256,7 +251,8 @@ function pay(){
         // alert("success");
         var json=eval('('+data+')');
         if(json.res==0){
-          alert("支付成功！")
+          alert("支付成功！");
+          window.location.href=window.location.href;
         }else{
           alert("支付失败！");
         }

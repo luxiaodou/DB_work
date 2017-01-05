@@ -42,7 +42,7 @@ function loadMerEdit(){
 }
 
 
-function submit(){
+function submitEdit(){
 
 	var mN=document.getElementById("merName").value;
 	var mD=document.getElementById("merD").value;

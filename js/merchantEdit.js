@@ -35,7 +35,8 @@ function load(){
     });
 }
 
-function submit(){
+function submitEdit(){
+    // alert("submit");
 	var mN=document.getElementById("mN").value;
 	var mE=document.getElementById("mE").value;
 	var mP=document.getElementById("mP").value;

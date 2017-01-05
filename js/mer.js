@@ -307,7 +307,7 @@ function createorder(){
       success: function(o){
           // alert(o.res);
           var result2=eval('('+o+')');
-          alert("success");
+          // alert("success");
           if(result2.res==0){
             alert("订单提交成功！");
           }else{

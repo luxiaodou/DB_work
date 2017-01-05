@@ -39,7 +39,7 @@ function loadMerchant(){
 }
 
 function Edit(){
-	window.location.href="merchantEdit.html?id="+strs[2];
+	window.location.href="merchantEdit.html?id="+strs[1];
 }
 
 function deleteitem(thisid){
