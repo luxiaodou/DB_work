@@ -58,7 +58,7 @@ function deleteitem(thisid){
 	      success: function(result){
 	        // alert("success");
 	        var json=eval('('+result+')');
-	        if (json.res==1) {
+	        if (json.res==0) {
 	        	window.location.href=window.location.href;
 	        }else{
 	        	alert("删除错误");

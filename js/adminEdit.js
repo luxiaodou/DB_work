@@ -1,4 +1,5 @@
 var idlist= new Array();
+var classid;
 function jumpSearch(){
   var id=document.getElementById("searchInput");
   alert(id.value);
@@ -28,6 +29,7 @@ function loadMerEdit(){
           var hm=document.getElementById("merHm");
           var m=document.getElementById("merM");
           var img=document.getElementById("merImg");
+          classid=json.class;
           img.innerText=json.image;
           mN.innerText=json.name;
           mD.innerText=json.brief;
@@ -71,7 +73,7 @@ function submitEdit(){
             // alert("success");
             var json=eval('('+o+')');
             if(json.res==0){
-              window.location.href="merchant.html?id="+idlist[0];
+              window.location.href="adminOperate.html?id="+classid;
             }else{
               alert("提交失败！");
             }
