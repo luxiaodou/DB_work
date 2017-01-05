@@ -196,7 +196,7 @@ function addComment(){
   // alert(getCom);
   $.ajax({
       type:"POST",
-      url:"php/loadmer.php",
+      url:"php/addComment.php",
       datatype:"json",
       async: false,
       data:{
@@ -306,7 +306,6 @@ function createorder(){
       },
       success: function(o){
           // alert(o.res);
-          // TODO:返回不为json所以无法debug
           var result2=eval('('+o+')');
           alert("success");
           if(result2.res==0){

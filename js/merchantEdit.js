@@ -8,6 +8,7 @@ function jumpSearch(){
 
 function load(){
 	strs=window.location.href.split("=");
+  document.getElementById("mecName").innerText=strs[1];
 	$.ajax({
       type:"POST",
       url:"php/loadshop.php",

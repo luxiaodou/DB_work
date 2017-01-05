@@ -6,13 +6,13 @@ function jumpSearch(){
 }
 
 function loadMerEdit(){
-	idlist=window.location.href.split("=");
-	var list=new Array();
-	list=idlist[1].split("&");
-	idlist[0]=list[0];
-	idlist[1]=idlist[2];
+  idlist=window.location.href.split("=");
+  var list=new Array();
+  list=idlist[1].split("&");
+  idlist[0]=list[0];
+  idlist[1]=idlist[2];
   document.getElementById("mecName").innerText=idlist[0];
-	$.ajax({
+  $.ajax({
       type:"POST",
       url:"php/loadmer.php",
       datatype:"json",
@@ -44,14 +44,13 @@ function loadMerEdit(){
 
 function submit(){
 
-	var mN=document.getElementById("merName").value;
-	var mD=document.getElementById("merD").value;
-	var hm=document.getElementById("merHm").value;
-	var m=document.getElementById("merM").value;
-	var img=document.getElementById("merImg").value;
+  var mN=document.getElementById("merName").value;
+  var mD=document.getElementById("merD").value;
+  var hm=document.getElementById("merHm").value;
+  var m=document.getElementById("merM").value;
+  var img=document.getElementById("merImg").value;
   var Re=document.getElementById("merRest").value;
   var type=document.getElementById("merType").value;
-  if(idlist[1]!=-1){
     $.ajax({
         type:"POST",
         url:"php/updateitem.php",
@@ -82,37 +81,6 @@ function submit(){
         },
 
     });
-  }else{
-    $.ajax({
-        type:"POST",
-        url:"php/additem.php",
-        datatype:"json",
-        async: false,
-        data:{
-          shopid:idlist[0],
-          name:mN,
-          price:hm,
-          origin:m,
-          brief:mD,
-          rest:Re,
-          shop:idlist[0],
-          class:type,
-          image:img
-        },
-        success: function(o){
-            // alert("success");
-            var json=eval('('+o+')');
-            if(o.res==0){
-              window.location.href="merchant.html?id="+idlist[0];
-            }else{
-              alert("提交失败！");
-            }
-        },
-        error: function(jqXHR){
-            alert("发生错误：" + jqXHR.status);
-        },
-
-    });
-  }
+  
     
 }

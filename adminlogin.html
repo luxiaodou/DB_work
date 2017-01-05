@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>乐购</title>
+    <link rel="icon" href="img/demo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/demo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+   
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="js/adminlogin.js"></script>
+<style >
+
+  .carousel{
+    height: 500px;
+    background-color: #000;
+  }
+  .col-xs-8{  
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .center{
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .navbar-change{
+    margin-top:200px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+.navbar-change{
+	margin-top: 400px;
+}
+
+</style>
+<script language="javascript">
+ 
+</script>
+  </head>
+    <body data-spy="scroll" data-target="#myScrollspy" onload="load()">
+	 	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+		    <div class="container">
+		      <!-- Brand and toggle get grouped for better mobile display -->
+		      <div class="navbar-header">
+		        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		          <span class="sr-only">Toggle navigation</span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="index.html">乐购</a>
+		      </div>
+		      <!-- Collect the nav links, forms, and other content for toggling -->
+		      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		        <ul class="nav navbar-nav">
+		          <li><a href="index.html">首页</a></li>
+		          <li><a href="result.html?class=1&keyword=f">美食</a></li>
+		          <li><a href="result.html?class=2&keyword=f">酒店</a></li>
+		          <li><a href="result.html?class=3&keyword=f">电影</a></li>
+		          <li><a href="result.html?class=4&keyword=f">KTV</a></li>
+		          <li><a href="result.html?class=5&keyword=f">生活服务</a></li>
+		        </ul>
+		        <form class="navbar-form navbar-left" role="search">
+		          <div class="form-group">
+		            <input type="text" class="form-control" placeholder="找点新鲜玩意..." id="searchInput">
+		          </div>
+		          <button type="submit" class="btn btn-default" onclick="jumpSearch()">Submit</button>
+		        </form>
+		      </div><!-- /.navbar-collapse -->
+		     </div><!--/.container-fluid -->
+		</nav>
+		<div class="container">
+		<h1 style="text-align: center;">乐购平台管理员接口</h1>
+		<form style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 50px;">
+			<div>
+			<label>管理员用户账号：</label>
+			<input type="text" name="" class="input" id="user"></div><div style="margin-top: 50px;">
+			<label>管理员用户密码：</label>
+			<input type="password" name="" class="input" id="pass"></div>
+			<button class="btn btn-default" onclick="login()">登录</button>
+		</form>
+   		</div>
+        <nav class="navbar navbar-default navbar-inverse navbar-change" role="navigation">
+          <p class="mynavbartext">联系我们：QQ123456789</p>
+        </nav>
+      </body>
+
+</html>

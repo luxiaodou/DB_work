@@ -1,4 +1,5 @@
 var usernameNow;
+var unpayid;
 function subNum(id){
   if(parseInt(document.getElementById(id).value)>1){
     document.getElementById(id).value=parseInt(document.getElementById(id).value)-1;
@@ -173,6 +174,7 @@ function load(){
         for(o in getData.orders){
           if(getData.orders[o].order_state==1){
             for(det in getData.orders[o].detail){
+              unpayid=getData.orders[o].order_id;
               count+=parseInt(getData.orders[o].detail[det].number)*parseFloat(getData.orders[o].detail[det].price);
               var div=document.createElement("div");
               div.className="itemList";
@@ -242,13 +244,13 @@ function load(){
 
 function pay(){
   $.ajax({
-    // TODO：付款文件写了吗。。没找到
       type:"POST",
       url:"php/pay.php",
       datatype:"json",
       async: false,
       data:{
-        username:usernameNow
+        username:usernameNow,
+        orderid:unpayid
       },
       success: function(data){
         // alert("success");

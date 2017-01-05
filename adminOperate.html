@@ -17,7 +17,7 @@
     
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="js/merchant.js"></script>
+    <script src="js/adminOperate.js"></script>
 <style >
 body{
   padding:70px 0px 0px 0px;
@@ -64,7 +64,7 @@ body{
 
 </script>
   </head>
-    <body data-spy="scroll" data-target="#myScrollspy" onload="loadMerchant()">
+    <body data-spy="scroll" data-target="#myScrollspy" onload="load()">
       <!-- top bar -->
       <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
@@ -82,11 +82,11 @@ body{
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="index.html">首页</a></li>
-              <li id="page1"><a href="result.html?class=1&keyword=f">美食</a></li>
-              <li id="page2"><a href="result.html?class=2&keyword=f">酒店</a></li>
-              <li id="page3"><a href="result.html?class=3&keyword=f">电影</a></li>
-              <li id="page4"><a href="result.html?class=4&keyword=f">KTV</a></li>
-              <li id="page5"><a href="result.html?class=5&keyword=f">生活服务</a></li>
+              <li><a href="result.html?class=1&keyword=f">美食</a></li>
+              <li><a href="result.html?class=2&keyword=f">酒店</a></li>
+              <li><a href="result.html?class=3&keyword=f">电影</a></li>
+              <li><a href="result.html?class=4&keyword=f">KTV</a></li>
+              <li><a href="result.html?class=5&keyword=f">生活服务</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
               <div class="form-group">
@@ -94,11 +94,6 @@ body{
               </div>
               <button type="submit" class="btn btn-default" onclick="jumpSearch()">Submit</button>
             </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#" data-toggle="modal" data-target="#merchantModal" id="mecName">商家名称</a></li>
-              <!-- <li><a href="#">联系我们</a></li>
-              <li><a href="#">意见反馈</a></li> -->
-            </ul>
           </div><!-- /.navbar-collapse -->
          </div><!--/.container-fluid -->
       </nav>
@@ -106,14 +101,9 @@ body{
       
       <!-- 商品列表 -->
       <div class="hold" id="merList">
-      <h2>商家信息界面</h2><button id="subEdit" class="btn btn-default" value="编辑信息" onclick="Edit()">编辑信息</button>
-      <button id="addEdit" class="btn btn-default" value="添加商品" onclick="addMer()">添加商品</button>
+      <h2>商品信息界面</h2>
         <div class="wrapper">
           <ul class="list-group" id="ulgroup">
-              <div><label>名称：</label><li class="list-group-item" id="list_N">903030303</li></div>
-              <div><label>邮箱：</label><li class="list-group-item" id="list_E">903030303</li></div>
-              <div><label>电话：</label><li class="list-group-item" id="list_P">903030303</li></div>
-              <div><label>地址：</label><li class="list-group-item" id="list_A">903030303</li></div>
               <!-- <div>
                 <div class="editDiv">
                   <a class="glyphicon glyphicon-remove" onclick="deleteitem(this.id)"></a>
