@@ -24,7 +24,7 @@ require_once 'mysql.php';
 
 $conn = sconnectDb();
 
-$id = $_POST['id'];
+$id = $_POST['shopid'];
 if (empty($id)) {
     die('id should not be empty!');
 }
@@ -39,7 +39,6 @@ $rest = $_POST['rest'];
 
 $res = mysql_query("INSERT INTO `item` (`item_id`, `item_name`, `item_price`, `item_origin`, `item_brief`, `item_shop`, `item_class`, `item_image`, `item_stars`, `item_brief`) 
                     VALUES (NULL, '$name', '$price', '$origin', '$brief', '$shop', '$class', '$image', '','$rest')",$conn);
-
 $out =new stdClass();
 if (mysql_errno()) {
     $out->res = '1';
