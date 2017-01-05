@@ -109,7 +109,7 @@ function loadshop(){
 
 	        		var a2=document.createElement("a");
 	        		a2.className="glyphicon glyphicon-pencil";
-	        		a1.id="edit"+json.items[o].id;
+	        		a2.id="edit"+json.items[o].id;
 	        		a2.onclick=function(){edititem(this.id);};
 	        		newdiv.appendChild(a2);
 	        		div.appendChild(newdiv);
@@ -127,4 +127,5 @@ function loadshop(){
 	       alert("发生错误：" + jqXHR.status);  
 	      },  
     });
+  
 }

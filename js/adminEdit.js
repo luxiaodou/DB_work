@@ -28,11 +28,11 @@ function loadMerEdit(){
           var hm=document.getElementById("merHm");
           var m=document.getElementById("merM");
           var img=document.getElementById("merImg");
-          img.src=json.image;
-          mN.value=json.name;
-          mD.value=json.brief;
-          hm.value=json.price;
-          m.value=json.origin;
+          img.innerText=json.image;
+          mN.innerText=json.name;
+          mD.innerText=json.brief;
+          hm.innerText=json.price;
+          m.innerText=json.origin;
         },
         error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  
@@ -42,7 +42,7 @@ function loadMerEdit(){
 }
 
 
-function submit(){
+function submitEdit(){
 
   var mN=document.getElementById("merName").value;
   var mD=document.getElementById("merD").value;

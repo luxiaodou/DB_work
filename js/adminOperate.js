@@ -23,13 +23,13 @@ function load(){
 	        		var a1=document.createElement("a");
 	        		a1.className="glyphicon glyphicon-remove";
 	        		a1.id="del"+json.items[o].id;
-	        		a1.onclick=function(){deleteitem(this.id);};
+	        		a1.onclick=function(){deleteitem(a1.id);};
 	        		newdiv.appendChild(a1);
 
 	        		var a2=document.createElement("a");
 	        		a2.className="glyphicon glyphicon-pencil";
-	        		a1.id="mcid="+json.items[o].shop+"&merid="+json.items[o].id;
-	        		a2.onclick=function(){edititem(this.id);};
+	        		a2.id="mcid="+json.items[o].shop+"&merid="+json.items[o].id;
+	        		a2.onclick=function(){edititem(a2.id);};
 	        		newdiv.appendChild(a2);
 	        		div.appendChild(newdiv);
 
@@ -46,12 +46,13 @@ function load(){
 	       alert("发生错误：" + jqXHR.status);  
 	      },  
     });
+
 }
 
 function deleteitem(thisid){
 	var tempid=new Array();
 	tempid=thisid.split("del");
-	// alert(tempid[1]);
+	alert(tempid[1]);
 	if(confirm("确定删除？")){
 		$.ajax({
 	      type:"POST",
@@ -78,6 +79,6 @@ function deleteitem(thisid){
 }
 
 function edititem(thisid){
-
+	// alert(thisid);
 	window.location.href="adminEdit.html?"+thisid;
 }

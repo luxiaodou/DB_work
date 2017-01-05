@@ -28,11 +28,11 @@ function loadMerEdit(){
           var hm=document.getElementById("merHm");
           var m=document.getElementById("merM");
           var img=document.getElementById("merImg");
-          img.src=json.image;
-          mN.value=json.name;
-          mD.value=json.brief;
+          img.innerText=json.image;
+          mN.innerText=json.name;
+          mD.innerText=json.brief;
           hm.value=json.price;
-          m.value=json.origin;
+          m.innerText=json.origin;
         },
         error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  

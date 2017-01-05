@@ -80,11 +80,11 @@ function loadInfo(){
           var mP=document.getElementById("mP");
           var mA=document.getElementById("mA");
           var mI=document.getElementById("mI");
-          mN.value=json.age;
-          mI.value=json.image;
-          mE.value=json.email;
-          mP.value=json.phone;
-          mA.value=json.addr;
+          mN.innerText=json.age;
+          mI.innerText=json.image;
+          mE.innerText=json.email;
+          mP.innerText=json.phone;
+          mA.innerText=json.addr;
         },
         error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  
@@ -115,8 +115,13 @@ function submit1(){
       success: function(o){
         // alert("success");
         var r=eval('('+o+')');
-        if()
-        window.location.href="user.html";
+        if(r.res==0)
+        {
+          window.location.href="user.html";
+        }
+        else{
+          alert("未提交成功");
+        }
         },
         error: function(jqXHR){     
        alert("发生错误：" + jqXHR.status);  
